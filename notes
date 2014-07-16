@@ -1,1 +1,21 @@
-notes
+1. setup app
+    -make sure express is working correctly
+    -edit index.html
+    -remove fullstack bloat
+    -add main file html/css (kinda)
+2. setup passport testing space
+    -facebook
+    -twitter
+    -google
+3. deployment procedure
+    -figure out a way to do a deployment. heroku?
+4. other goals
+goals:
+    mobile friendly(media-queries)
+    pages for each sign in 
+    swiping functionality for page-to-page transitions
+        cool looking transitions (stick to finger swiping)
+    chronological order page
+    asyncronous loading of initial pages
+    pull to refresh
+    remember sign in(cookies?)
