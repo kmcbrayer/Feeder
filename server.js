@@ -2,7 +2,6 @@
 
 // Module dependencies.
 var express = require('express');
-
 var app = express();
 
 
@@ -11,10 +10,12 @@ require('./lib/config/express')(app);
 
 // Controllers
 var api = require('./lib/controllers/api'),
-    index = require('./lib/controllers');
+    index = require('./lib/controllers'),
+    reddit = require('./lib/controllers');
 
 // Server Routes
 app.get('/api/awesomeThings', api.awesomeThings);
+app.get('/api/redditAww', api.redditAww);
 
 // Angular Routes
 app.get('/partials/*', index.partials);

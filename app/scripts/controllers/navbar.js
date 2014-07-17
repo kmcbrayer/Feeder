@@ -13,6 +13,10 @@ angular.module('feederApp')
     {
       'title': 'Contact',
       'link': '#'
+    },
+    {
+      'title': 'Reddit',
+      'link': '/#redditAww'
     }];
 
     $scope.isActive = function(route) {

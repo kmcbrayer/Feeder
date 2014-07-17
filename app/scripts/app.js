@@ -10,6 +10,10 @@ angular.module('feederApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
+      .when('/#redditAww',{
+        templateUrl: 'partials/redditAww',
+        controller: 'RedditAwwCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
