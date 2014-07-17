@@ -1,8 +1,8 @@
 1. setup app
-    -make sure express is working correctly
-    -edit index.html
-    -remove fullstack bloat
-    -add main file html/css (kinda)
+    c-make sure express is working correctly
+    c-edit index.html
+    c-remove fullstack bloat
+    later-add main file html/css (kinda)
 2. setup passport testing space
     -facebook
     -twitter

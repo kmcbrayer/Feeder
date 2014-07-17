@@ -5,5 +5,4 @@ angular.module('feederApp')
     $http.get('/api/redditAww').success(function(awwData) {
       $scope.awwData = awwData;
     });
-    console.log($scope.awwData);
   });

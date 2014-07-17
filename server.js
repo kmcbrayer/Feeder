@@ -13,7 +13,6 @@ var api = require('./lib/controllers/api'),
     index = require('./lib/controllers');
 
 // Server Routes
-app.get('/api/awesomeThings', api.awesomeThings);
 app.get('/api/redditAww', api.redditAww);
 
 // Angular Routes
