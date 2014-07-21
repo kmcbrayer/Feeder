@@ -10,9 +10,17 @@ angular.module('feederApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
-      .when('/#redditAww',{
+      .when('/redditAww',{
         templateUrl: 'partials/redditAww',
         controller: 'RedditAwwCtrl'
+      })
+      .when('/login',{
+        templateUrl: 'partials/login_local',
+        controller: 'LoginCtrl'
+      })
+      .when('/twitter', {
+        templateUrl: 'views/twitter.html',
+        controller: 'TwitterCtrl'
       })
       .otherwise({
         redirectTo: '/'

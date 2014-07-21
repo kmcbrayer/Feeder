@@ -7,16 +7,16 @@ angular.module('feederApp')
       'link': '/'
     },
     {
-      'title': 'About',
-      'link': '#'
-    },
-    {
-      'title': 'Contact',
-      'link': '#'
+      'title': 'Login',
+      'link': '/login'
     },
     {
       'title': 'Reddit',
-      'link': '/#redditAww'
+      'link': '/redditAww'
+    },
+    {
+      'title': 'Twitter',
+      'link': '/twitter'
     }];
 
     $scope.isActive = function(route) {

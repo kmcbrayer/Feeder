@@ -4,8 +4,15 @@
     c-remove fullstack bloat
     later-add main file html/css (kinda)
 2. setup passport testing space
-    -facebook
+    example http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local
+    :can use 127.0.0.1:9000 for callback url.
     -twitter
+        start with twitter:
+        need:
+            login form
+            form submit goes to ??
+
+    -facebook
     -google
 3. deployment procedure
     -figure out a way to do a deployment. heroku?
