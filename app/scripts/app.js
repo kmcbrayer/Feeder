@@ -21,9 +21,6 @@ angular.module('feederApp', [
       .when('/twitter', {
         templateUrl: 'views/twitter.html',
         controller: 'TwitterCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
   });

@@ -16,9 +16,9 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new TwitterStrategy({
-    consumerKey: 'fJyZKWakTGLsZoDJR5EjMBv8C',//TWITTER_CONSUMER_KEY,
-    consumerSecret: 'TJKuprjkz7m266gLGI0If4yJyKTDOMWOGZgSWhZLZSsLU6dnet',//TWITTER_CONSUMER_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+    consumerKey: 'nBDpKjVXPtYTrOUDebWB6TZ8Y',//TWITTER_CONSUMER_KEY,
+    consumerSecret: 'dgMop9KO1iUQvKzhnNGySMcnmC2HdFGKrktoN70oWzvZELU6I1',//TWITTER_CONSUMER_SECRET,
+    callbackURL: "http://www.devsite.com:9000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
     // asynchronous verification, for effect...
@@ -28,7 +28,7 @@ passport.use(new TwitterStrategy({
       // represent the logged-in user.  In a typical application, you would want
       // to associate the Twitter account with a user record in your database,
       // and return that user instead.
-      return done(null, user);
+      return done(null, profile);
     });
   }
 ));
@@ -52,11 +52,15 @@ app.get('/auth/twitter',
     // The request will be redirected to Twitter
   });
 app.get('/auth/twitter/callback', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
+	passport.authenticate(
+		'twitter', 
+		{ failureRedirect: '/login_failure' }
+	),
   function(req, res) {
     for (var i in req){console.log(i)};
     res.redirect('/');
-  });
+  }
+);
 
 // Angular Routes
 app.get('/partials/*', index.partials);
