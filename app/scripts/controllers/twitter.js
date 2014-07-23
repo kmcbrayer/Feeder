@@ -9,9 +9,14 @@
  */
 angular.module('feederApp')
   .controller('TwitterCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $http.get('/api/currentUser').success(function(user) {
+      $scope.user = {
+      	id : user.id,
+      	userName : user._json.screen_name,
+      	displayName : user.displayName,
+      	imageUrl : user.photos[0].value,
+
+      }
+     
+    });
   });
