@@ -5,9 +5,14 @@
     later-add main file html/css (kinda)
 2. set up sign ins
     c-twitter
+        C-get user timelines from twitter api(look into twit module)
+        C-in /twitter do an "if (!user) show login"
     -facebook
     -youtube
-
+2.5 write tests:
+    -mock objects - directivs
+    -e2e - api calls
+    -spec - ng-show, filters
 3. deployment procedure
     -figure out a way to do a deployment. heroku?
 4. other goals

@@ -7,7 +7,7 @@ angular.module('feederApp')
       $scope.user = {
       	id : user.id,
       	userName : user._json.screen_name,
-      	displayName : user.displayName,
+      	displayName : user._json.name,
       	imageUrl : user.photos[0].value
 
       };

@@ -5,6 +5,7 @@ var express = require('express');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var secrets = require('./lib/controllers/secrets');
+var twitAPI = require('./lib/controllers/twitterApi');
 // init app
 var app = express();
 
@@ -40,6 +41,7 @@ app.get('/api/redditAww', api.redditAww);
 app.get('/api/currentUser', api.user);
 
 // Twitter Routes
+app.get('/api/twitter/statuses', twitAPI.statuses)
 app.get('/auth/twitter', 
 	passport.authenticate('twitter'), 
 	function(req, res){
@@ -52,7 +54,7 @@ app.get('/auth/twitter/callback',
 		{ failureRedirect: '/login' }
 	),
 	function(req, res) {
-		res.redirect('/');
+		res.redirect('/twitter');
 	}
 );
 // Angular Routes
