@@ -4,7 +4,9 @@
 var express = require('express');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
-
+var secrets = require('./lib/controllers/secrets');
+var twitAPI = require('./lib/controllers/twitterApi');
+// init app
 var app = express();
 
 passport.serializeUser(function(user, done) {
@@ -16,23 +18,16 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new TwitterStrategy({
-    consumerKey: 'nBDpKjVXPtYTrOUDebWB6TZ8Y',//TWITTER_CONSUMER_KEY,
-    consumerSecret: 'dgMop9KO1iUQvKzhnNGySMcnmC2HdFGKrktoN70oWzvZELU6I1',//TWITTER_CONSUMER_SECRET,
+    consumerKey: secrets.twitter.consumerKey,
+    consumerSecret: secrets.twitter.consumerSecret,
     callbackURL: "http://www.devsite.com:9000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
-    // asynchronous verification, for effect...
     process.nextTick(function () {
-      console.log(profile);
-      // To keep the example simple, the user's Twitter profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Twitter account with a user record in your database,
-      // and return that user instead.
       return done(null, profile);
     });
   }
 ));
-
 
 // Express Configuration
 require('./lib/config/express')(app);
@@ -46,22 +41,22 @@ app.get('/api/redditAww', api.redditAww);
 app.get('/api/currentUser', api.user);
 
 // Twitter Routes
-app.get('/auth/twitter',
-  passport.authenticate('twitter'),
-  function(req, res){
+app.get('/api/twitter/statuses', twitAPI.statuses)
+app.get('/auth/twitter', 
+	passport.authenticate('twitter'), 
+	function(req, res){
     // The request will be redirected to Twitter
-  });
+  }
+);
 app.get('/auth/twitter/callback', 
 	passport.authenticate(
 		'twitter', 
-		{ failureRedirect: '/login_failure' }
+		{ failureRedirect: '/login' }
 	),
-  function(req, res) {
-    for (var i in req){console.log(i)};
-    res.redirect('/');
-  }
+	function(req, res) {
+		res.redirect('/twitter');
+	}
 );
-
 // Angular Routes
 app.get('/partials/*', index.partials);
 app.get('/*', index.index);

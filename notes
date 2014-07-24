@@ -3,17 +3,16 @@
     c-edit index.html
     c-remove fullstack bloat
     later-add main file html/css (kinda)
-2. setup passport testing space
-    example http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local
-    :can use 127.0.0.1:9000 for callback url.
-    -twitter
-        start with twitter:
-        need:
-            login form
-            form submit goes to ??
-
+2. set up sign ins
+    c-twitter
+        C-get user timelines from twitter api(look into twit module)
+        C-in /twitter do an "if (!user) show login"
     -facebook
-    -google
+    -youtube
+2.5 write tests:
+    -mock objects - directivs
+    -e2e - api calls
+    -spec - ng-show, filters
 3. deployment procedure
     -figure out a way to do a deployment. heroku?
 4. other goals
@@ -26,6 +25,3 @@ goals:
     asyncronous loading of initial pages
     pull to refresh
     remember sign in(cookies?)
-
-var TWITTER_ACCESS_TOKEN = '124310203-Fn9Ta0f8WJsyHgexDegXZYesH4cTKYNtjZ2m4oiB';
-var TWITTER_ACCESS_SECRET = 'BNfm0kRw1MiU3wtqE5uNlMXRT6LX82b3U4U2gytrBjLOp';
