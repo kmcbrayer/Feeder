@@ -16,8 +16,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <!-- endbuild -->
   </head>
   <body ng-app="feederApp">
@@ -26,7 +26,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-include="'partials/navbar'"></div>
+    <div ng-include="'navbar/navbar'"></div>
     <div class="container" ng-view=""></div>
 
     <!--[if lt IE 9]>
@@ -43,12 +43,12 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/navbar.js"></script>
-        <script src="scripts/controllers/ang_reddit.js"></script>
-        <script src="scripts/controllers/login_local.js"></script>
-        <script src="scripts/controllers/twitter.js"></script>
+        <script src="app.js"></script>
+        <script src="main_page/main.js"></script>
+        <script src="navbar/navbar.js"></script>
+        <script src="reddit/reddit.js"></script>
+        <script src="local-login/login.js"></script>
+        <script src="twitter/twitter.js"></script>
         <!-- endbuild -->
 </body>
 </html>

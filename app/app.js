@@ -7,19 +7,19 @@ angular.module('feederApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
+        templateUrl: 'main_page/main.html',
         controller: 'MainCtrl'
       })
       .when('/redditAww',{
-        templateUrl: 'partials/redditAww',
+        templateUrl: 'reddit/redditAww.html',
         controller: 'RedditAwwCtrl'
       })
       .when('/login',{
-        templateUrl: 'partials/login_local',
+        templateUrl: 'local-login/login',
         controller: 'LoginCtrl'
       })
       .when('/twitter', {
-        templateUrl: 'views/twitter.html',
+        templateUrl: 'twitter/twitter.html',
         controller: 'TwitterCtrl'
       });
     $locationProvider.html5Mode(true);

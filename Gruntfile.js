@@ -68,9 +68,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         files: [
-          '<%= yeoman.app %>/<%= yeoman.views %>/{,*//*}*.{html,jade}',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
+          '<%= yeoman.app %>/{,*//*}*.{html,jade,css,js}',
           '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
         ],
       
@@ -152,7 +150,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     'bower-install': {
       app: {
-        html: '<%= yeoman.app %>/views/index.html',
+        html: '<%= yeoman.app %>/index.html',
         ignorePath: '<%= yeoman.app %>/'
       }
     },
@@ -164,8 +162,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/styles/{,*/}*.css',
+            '<%= yeoman.dist %>/{,*/}*.js',
+            '<%= yeoman.dist %>/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/styles/fonts/*'
           ]
@@ -177,8 +175,8 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: ['<%= yeoman.app %>/<%= yeoman.views %>/index.html',
-             '<%= yeoman.app %>/<%= yeoman.views %>/index.jade'],
+      html: ['<%= yeoman.app %>/index.html',
+             '<%= yeoman.app %>/index.jade'],
       options: {
         dest: '<%= yeoman.dist %>'
       }

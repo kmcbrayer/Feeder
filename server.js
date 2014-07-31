@@ -58,7 +58,7 @@ app.get('/auth/twitter/callback',
 	}
 );
 // Angular Routes
-app.get('/partials/*', index.partials);
+app.get('/**/*', index.partials);
 app.get('/*', index.index);
 
 
