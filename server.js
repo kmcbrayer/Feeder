@@ -4,6 +4,7 @@
 var express = require('express');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy
 var secrets = require('./lib/controllers/secrets');
 var twitAPI = require('./lib/controllers/twitterApi');
 // init app
@@ -25,6 +26,17 @@ passport.use(new TwitterStrategy({
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
       return done(null, profile);
+    });
+  }
+));
+passport.use(new FacebookStrategy({
+    clientID        : secrets.facebook.app_id,
+    clientSecret    : secrets.facebook.app_secret,
+    callbackURL     : "http://www.devsite.com:9000/auth/facebook/callback"
+  },
+  function(token, refreshToken, profile, done) {
+    process.nextTick(function(){
+      return done(null, profile); 
     });
   }
 ));
@@ -56,6 +68,21 @@ app.get('/auth/twitter/callback',
 	function(req, res) {
 		res.redirect('/twitter');
 	}
+);
+// Facebook Routes
+app.get('/auth/facebook',
+  passport.authenticate('facebook'),
+  function(req,res){
+    // The request will be redirected to Facebook
+  }
+);
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook',{
+    failureRedirect: '/login'
+  }),
+  function(req,res) {
+    res.redirect('/facebook');
+  }
 );
 // Angular Routes
 app.get('/**/:fileName', index.partials);

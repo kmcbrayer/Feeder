@@ -21,6 +21,10 @@ angular.module('feederApp', [
       .when('/twitter', {
         templateUrl: 'twitter/twitter.html',
         controller: 'TwitterCtrl'
+      })
+      .when('/facebook', {
+        templateUrl: 'facebook/facebook.html',
+        controller: 'FacebookCtrl'
       });
     $locationProvider.html5Mode(true);
   });
