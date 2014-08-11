@@ -9,14 +9,13 @@
  */
 angular.module('feederApp')
   .controller('FacebookCtrl', function ($scope,$http) {
-    $http.get('/api/currentUser').success(function(user) {
+    $http.get('/api/facebook/currentUser').success(function(user) {
+      console.log(user)
       $scope.user = {
         id : user.id,
-        userName : user._json.screen_name,
-        displayName : user.displayName,
-        imageUrl : user.photos[0].value
+        userName : user.username,
+        displayName : user.displayName
       };
-      $scope.raw = user;
       $scope.hasUser = function() {
       if ($scope.user !== null)
         return true;

@@ -9,7 +9,7 @@
  */
 angular.module('feederApp')
   .controller('TwitterCtrl', function ($scope,$http) {
-    $http.get('/api/currentUser').success(function(user) {
+    $http.get('/api/twitter/currentUser').success(function(user) {
       $scope.user = {
       	id : user.id,
       	userName : user._json.screen_name,
