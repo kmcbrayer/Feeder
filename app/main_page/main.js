@@ -9,9 +9,10 @@ angular.module('feederApp')
       	userName : user._json.screen_name,
       	displayName : user._json.name,
       	imageUrl : user.photos[0].value
-
       };
-      $scope.raw = user;
+    })
+    .error(function() {
+      //eat this error
     });
 
   });

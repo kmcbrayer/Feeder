@@ -16,12 +16,12 @@ angular.module('feederApp')
       	displayName : user.displayName,
       	imageUrl : user.photos[0].value
       };
-    });
-    $scope.hasUser = function() {
-    	if ($scope.user !== null)
-    		return true;
-    	return false;
+      $scope.hasUser = function() {
+      if ($scope.user !== null)
+        return true;
+      return false;
     };
+    });
     $http.get('/api/twitter/statuses').success(function(data) {
     	$scope.dataList = data;
     });
