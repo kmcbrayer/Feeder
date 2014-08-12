@@ -7,11 +7,6 @@ angular.module('feederApp')
     	password: ''
   	};
     $scope.login = function (credentials) {
-      AuthService.login(credentials).then(function (user) {
-        //$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-        //$scope.setCurrentUser(user);
-      }, function () {
-        //login failed
-      });
+      //what ever
     };
   });

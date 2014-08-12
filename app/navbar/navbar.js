@@ -17,6 +17,10 @@ angular.module('feederApp')
     {
       'title': 'Twitter',
       'link': '/twitter'
+    },
+    {
+      'title': 'facebook',
+      'link': '/facebook'
     }];
 
     $scope.isActive = function(route) {

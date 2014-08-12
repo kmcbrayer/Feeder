@@ -7,7 +7,10 @@
     c-twitter
         C-get user timelines from twitter api(look into twit module)
         C-in /twitter do an "if (!user) show login"
-    -facebook
+    c-facebook
+        -get user timelines
+c-hotfix: set up userdata in local storeage
+c-hotfix: seperate out login stratagies
     -youtube
 2.5 write tests:
     -mock objects - directivs
