@@ -22,5 +22,7 @@ angular.module('feederApp')
       return false;
     };
     });
-    
+    $http.get('/api/facebook/feed').success(function(data) {
+      $scope.dataList = data;
+    });
   });

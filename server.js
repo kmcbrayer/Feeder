@@ -4,6 +4,8 @@
 var express = require('express');
 var passport = require('passport');
 var Storage = require('dom-storage');
+var twitAPI = require('./lib/controllers/twitterApi');
+var fbAPI = require('./lib/controllers/facebookApi');
 
 // Setup session storage
 var store = new Storage(null, {strict:true});
@@ -26,11 +28,11 @@ var api = require('./lib/controllers/api'),
 app.get('/api/redditAww', api.redditAww);
 app.get('/api/facebook/currentUser', api.fbUser(store));
 app.get('/api/twitter/currentUser', api.twitUser(store));
+app.get('/api/twitter/statuses', twitAPI.statuses)
+app.get('/api/facebook/feed', fbAPI.feed)
 
 // Angular Routes
-app.get('/**/:fileName', index.partials);
 app.get('/*', index.index);
-
 
 // Start server
 var port = process.env.PORT || 3000;
