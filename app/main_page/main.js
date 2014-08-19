@@ -8,7 +8,7 @@ angular.module('feederApp')
       	id : user.id,
       	userName : user._json.screen_name,
       	displayName : user._json.name,
-      	imageUrl : user.photos[0].value
+        imageUrl : user.photos[0].value
       };
     })
     .error(function() {

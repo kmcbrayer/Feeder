@@ -18,7 +18,6 @@ module.exports = function(config) {
       'bower/bower_components/angular-touch/angular-touch.js',
       'app/**/*.js',
       'app/*.js',
-      'test/mock/objects/*.json',
       'test/spec/**/*.js'
     ],
 
@@ -34,7 +33,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // Start these browsers, currently available:
