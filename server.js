@@ -6,6 +6,7 @@ var passport = require('passport');
 var Storage = require('dom-storage');
 var twitAPI = require('./lib/controllers/twitterApi');
 var fbAPI = require('./lib/controllers/facebookApi');
+var ytAPI = require('./lib/controllers/youtubeApi');
 
 // Setup session storage
 var store = new Storage(null, {strict:true});
@@ -19,17 +20,29 @@ require('./lib/config/express')(app);
 require('./lib/config/fb_login')(app,passport,store);
 // Twitter Auth Config
 require('./lib/config/twit_login')(app,passport,store);
+// Youtube Auth Config
+require('./lib/config/yt_login')(app,passport,store);
+
+
 
 // Controllers
 var api = require('./lib/controllers/api'),
     index = require('./lib/controllers');
 
 // Server Routes
+//reddit
 app.get('/api/redditAww', api.redditAww);
+//facebook
 app.get('/api/facebook/currentUser', api.fbUser(store));
+app.get('/api/facebook/feed', fbAPI.feed)
+//twitter
 app.get('/api/twitter/currentUser', api.twitUser(store));
 app.get('/api/twitter/statuses', twitAPI.statuses)
-app.get('/api/facebook/feed', fbAPI.feed)
+//youtube
+app.get('/api/youtube/currentUser', api.ytUser(store));
+app.get('/api/youtube/subscriptions', ytAPI.subscriptions(store));
+
+
 
 // Angular Routes
 app.get('/*', index.index);

@@ -8,9 +8,11 @@
     "fb": "^0.7.0",
     "passport": "^0.2.0",
     "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.1.5",
     "passport-twitter": "^1.0.2",
     "request": "^2.37.0",
-    "twit": "^1.1.18"
+    "twit": "^1.1.18",
+    "youtube-api": "^0.3.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.3.0",

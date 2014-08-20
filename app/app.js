@@ -25,6 +25,10 @@ angular.module('feederApp', [
       .when('/facebook', {
         templateUrl: 'facebook/facebook.html',
         controller: 'FacebookCtrl'
+      })
+      .when('/youtube', {
+        templateUrl: 'youtube/youtube.html',
+        controller: 'YoutubeCtrl'
       });
     $locationProvider.html5Mode(true);
   });

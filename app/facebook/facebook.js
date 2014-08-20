@@ -10,7 +10,6 @@
 angular.module('feederApp')
   .controller('FacebookCtrl', function ($scope,$http) {
     $http.get('/api/facebook/currentUser').success(function(user) {
-      console.log(user)
       $scope.user = {
         id : user.id,
         userName : user.username,
