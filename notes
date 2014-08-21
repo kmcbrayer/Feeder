@@ -15,11 +15,13 @@
     c-hotfix: seperate out login stratagies
     c-youtube sign in
         c-get subscription feed
-    -reddit:
     C-instagram login
         c-feed
-
+2.10 need consistant data for users(feature: single sign on?)
+    -may need database?
+    -cookies?
 2.25 feature: chronological home screen:
+c-:hotfix - dynamic passport redirects
     -get all avalable feeds
     -merge them based on time
     -display with pretty colors
@@ -28,7 +30,7 @@
 2.5 write tests:
     c-mock objects
     c-api calls
-    -directivs
+    -directives
         ng-show
         filters
     -e2e ??
@@ -37,16 +39,13 @@
 
 3. deployment procedure
     -figure out a way to do a deployment. heroku?
-4. need consistant data for users(feature: single sign on)
-    -may need database?
-    -cookies?
 5. news rss feeds?
 **other goals
     mobile friendly(media-queries)
     pages for each sign in 
     swiping functionality for page-to-page transitions
         cool looking transitions (stick to finger swiping)
-    chronological order page
     asyncronous loading of initial pages
     pull to refresh
     remember sign in(cookies?)
+        time since last used: if after certain time auto refresh

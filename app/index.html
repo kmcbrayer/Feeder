@@ -26,25 +26,33 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-include="'navbar/navbar.html'"></div>
-    <div class="container" ng-view=""></div>
+    <div ng-controller="AppCtrl">
+        <div class="userModel" style"position: absolute;top: 0px;left:0px;">
+        {{user}}
+        </div>
+        <!-- this is where the header will go -->
+        <div ng-include="'navbar/navbar.html'"></div>
+        <div class="container" ng-view=""></div>
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower/bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower/bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- build:js(app) scripts/vendor.js -->
+    <!-- build:js(app) -->
     <!-- bower:js -->
     <script src="bower/bower_components/angular/angular.js"></script>
     <script src="bower/bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower/bower_components/angular-route/angular-route.js"></script>
     <script src="bower/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower/bower_components/angular-local-storage/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!-- build:js({.tmp,app}) -->
         <script src="app.js"></script>
+        <script src="appCtrl.js"></script>
         <script src="main_page/main.js"></script>
         <script src="navbar/navbar.js"></script>
         <script src="reddit/reddit.js"></script>
@@ -53,6 +61,7 @@
         <script src="facebook/facebook.js"></script>
         <script src="youtube/youtube.js"></script>
         <script src="instagram/instagram.js"></script>
+        <script src="services/userService.js"></script>
         <!-- endbuild -->
 </body>
 </html>

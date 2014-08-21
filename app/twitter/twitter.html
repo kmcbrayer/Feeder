@@ -1,12 +1,12 @@
-<div ng-show="!hasUser()">
-	<a href="/auth/twitter" target="_self" class="btn btn-info">Twitter</a>
+<div ng-show="!hasUser">
+	<a href="/authin/twitter" target="_self" class="btn btn-info">Twitter</a>
 </div>
-<div ng-show="hasUser()">
+<div ng-show="hasUser">
 	User Name : {{user.userName}}</br>
   Display Name : {{user.displayName}}</br>
-  <image ng-src="{{user.imageUrl}}">
+  <image ng-src="{{user.photoUrl}}">
 </div>
-<div class="timeline" ng-show="hasUser()">
+<div class="timeline" ng-show="hasUser">
 	<ul>
 		<li ng-repeat="tweet in dataList">
 			date: {{tweet.date}}</br>

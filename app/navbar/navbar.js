@@ -7,15 +7,11 @@ angular.module('feederApp')
       'link': '/'
     },
     {
-      'title': 'Login',
-      'link': '/login'
-    },
-    {
-      'title': 'Reddit',
+      'title': 'reddit',
       'link': '/redditAww'
     },
     {
-      'title': 'Twitter',
+      'title': 'twitter',
       'link': '/twitter'
     },
     {
