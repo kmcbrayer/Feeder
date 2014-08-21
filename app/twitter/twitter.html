@@ -9,10 +9,9 @@
 <div class="timeline" ng-show="hasUser()">
 	<ul>
 		<li ng-repeat="tweet in dataList">
-			date: {{tweet.created_at}}
-			tweet: {{tweet.text}}
-			name: {{tweet.user.name}}
-			screen_name: {{tweet.user.screen_name}}
+			date: {{tweet.date}}</br>
+			tweet: {{tweet.caption}}</br>
+			name: {{tweet.user}}
 		</li>
 	</ul>
 </div>

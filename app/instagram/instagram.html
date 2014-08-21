@@ -1,0 +1,19 @@
+<div ng-show="!hasUser()">
+  <a href="/auth/instagram" target="_self" class="btn btn-info">Instagram</a>
+</div>
+<div ng-show="hasUser()">
+  User Name : {{user.userName}}</br>
+  Display Name : {{user.displayName}}</br>
+  <image ng-src="{{user.imageUrl}}" style="height: 50px;">
+</div>
+
+<div ng-show="hasUser()">
+  <div ng-repeat="article in dataList">
+    <a ng-href="{{article.link}}">
+      <image ng-src="{{article.photo}}"  ></br>
+      User: {{article.user}}</br>
+      #Likes: {{article.likeCount}}</br>
+      Caption: {{article.caption}}
+    </a>
+  </div>
+</div>

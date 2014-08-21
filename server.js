@@ -7,6 +7,7 @@ var Storage = require('dom-storage');
 var twitAPI = require('./lib/controllers/twitterApi');
 var fbAPI = require('./lib/controllers/facebookApi');
 var ytAPI = require('./lib/controllers/youtubeApi');
+var igAPI = require('./lib/controllers/instagramApi');
 
 // Setup session storage
 var store = new Storage(null, {strict:true});
@@ -22,6 +23,8 @@ require('./lib/config/fb_login')(app,passport,store);
 require('./lib/config/twit_login')(app,passport,store);
 // Youtube Auth Config
 require('./lib/config/yt_login')(app,passport,store);
+// Instagram Auth Config
+require('./lib/config/ig_login')(app,passport,store);
 
 
 
@@ -41,6 +44,9 @@ app.get('/api/twitter/statuses', twitAPI.statuses)
 //youtube
 app.get('/api/youtube/currentUser', api.ytUser(store));
 app.get('/api/youtube/subscriptions', ytAPI.subscriptions(store));
+//instagram
+app.get('/api/instagram/currentUser', api.igUser(store));
+app.get('/api/instagram/feed', igAPI.feed(store));
 
 
 

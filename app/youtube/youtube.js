@@ -16,16 +16,6 @@ angular.module('feederApp')
     };
     });
     $http.get('/api/youtube/subscriptions').success(function(subs) {
-      $scope.subs = subs;
-      $scope.dataList = [];
-      for (var i=0;i<subs.length;i++){
-        var ytItem = {};
-        ytItem.date = subs[i].publishedAt;
-        ytItem.title = subs[i].title;
-        ytItem.thumb = subs[i].thumbnails.default.url;
-        ytItem.channelTitle = subs[i].channelTitle;
-        // get link ytItem.link = subs[i].
-        $scope.dataList.push(ytItem);
-      }
+      $scope.dataList = subs;
     })
   });

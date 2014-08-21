@@ -29,6 +29,10 @@ angular.module('feederApp', [
       .when('/youtube', {
         templateUrl: 'youtube/youtube.html',
         controller: 'YoutubeCtrl'
+      })
+      .when('/instagram', {
+        templateUrl: 'instagram/instagram.html',
+        controller: 'InstagramCtrl'
       });
     $locationProvider.html5Mode(true);
   });

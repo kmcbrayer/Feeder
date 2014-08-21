@@ -4,18 +4,27 @@
     c-remove fullstack bloat
     c-later-add main file html/css
         *bootstrapped it :(
+
 2. set up sign ins
     c-twitter
         C-get user timelines from twitter api(look into twit module)
         C-in /twitter do an "if (!user) show login"
     c-facebook sign in
-*        -get user timelines
+*        -get user timelines -- can't pull feeds w/o facebook approval
     c-hotfix: set up userdata in local storeage
     c-hotfix: seperate out login stratagies
     c-youtube sign in
-*        get subscription feed
+        c-get subscription feed
     -reddit:
-    -instagram:
+    C-instagram login
+        c-feed
+
+2.25 feature: chronological home screen:
+    -get all avalable feeds
+    -merge them based on time
+    -display with pretty colors
+    -checkboxes for adding and removing feeds
+
 2.5 write tests:
     c-mock objects
     c-api calls
@@ -23,18 +32,16 @@
         ng-show
         filters
     -e2e ??
-2.75 feature: chronological home screen:
-    -get all avalable feeds
-    -merge them based on time
-    -display with pretty colors
-    -checkboxes for adding and removing feeds
+
+2.75 models for data consistancy/ prevent api calls
+
 3. deployment procedure
     -figure out a way to do a deployment. heroku?
 4. need consistant data for users(feature: single sign on)
     -may need database?
     -cookies?
-**. other goals
-goals:
+5. news rss feeds?
+**other goals
     mobile friendly(media-queries)
     pages for each sign in 
     swiping functionality for page-to-page transitions

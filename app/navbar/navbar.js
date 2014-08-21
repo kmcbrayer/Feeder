@@ -25,6 +25,10 @@ angular.module('feederApp')
     {
       'title': 'youtube',
       'link': '/youtube'
+    },
+    {
+      'title': 'instagram',
+      'link': '/instagram'
     }];
 
     $scope.isActive = function(route) {
