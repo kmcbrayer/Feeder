@@ -17,7 +17,7 @@
         c-get subscription feed
     C-instagram login
         c-feed
-2.10 need consistant data for users(feature: single sign on?)
+2.10 need persistant data for users(feature: single sign on?)
     -may need database?
     -cookies?
 2.25 feature: chronological home screen:

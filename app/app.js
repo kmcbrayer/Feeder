@@ -2,8 +2,7 @@
 
 angular.module('feederApp', [
   'ngCookies',
-  'ngRoute',
-  'LocalStorageModule'
+  'ngRoute'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

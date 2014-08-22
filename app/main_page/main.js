@@ -21,7 +21,7 @@ angular.module('feederApp')
     if (UserService.isLoggedIntoYoutube) {
       $http.get('/api/youtube/subscriptions').success(function(subs) {
         $scope.youtubeList = subs;
-      })
+      });
     }
     //compile list into dataList
 
