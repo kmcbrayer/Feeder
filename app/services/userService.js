@@ -2,7 +2,7 @@
 
 angular.module('feederApp')
   .factory('UserService', function(localStorage) {
-    var userData = {};
+    var userData = null;
     if (localStorage.getObject('userData')) {
       userData = localStorage.getObject('userData');
     } else {
@@ -32,7 +32,30 @@ angular.module('feederApp')
 
     var ret = {
       "userData" : userData,
-      setUserData : function() {
+      setUserData : function(type, data) {
+        if (type === 'twitter'){
+          userData.info.twitter = data;
+        } 
+        if (type === 'instagram') {
+          userData.info.instagram = data;
+        }
+        if (type === 'youtube') {
+          userData.info.youtube = data;
+        }
+
+        localStorage.setObject('userData', userData);
+      },
+      setLoggedIn : function(type,bool) {
+        if (type === 'twitter'){
+          userData.isLoggedIntoTwitter = bool;
+        } 
+        if (type === 'instagram') {
+          userData.isLoggedIntoInstagram = bool;
+        }
+        if (type === 'youtube') {
+          userData.isLoggedIntoYoutube = bool;
+        }
+
         localStorage.setObject('userData', userData);
       }
     };

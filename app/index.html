@@ -28,6 +28,8 @@
     <!-- Add your site or application content here -->
     <div ng-controller="AppCtrl">
         <div class="userModel" style"position: absolute;top: 0px;left:0px;">
+        <div ng-click="clear()" style="fontweight:bold;">Clear User</div>
+        <div onclick="window.localStorage.clear();" style="fontweight:bold;">Clear store</div>
         {{user}}
         </div>
         <!-- this is where the header will go -->
@@ -47,6 +49,7 @@
     <script src="bower/bower_components/angular-route/angular-route.js"></script>
     <script src="bower/bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower/bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="bower/bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

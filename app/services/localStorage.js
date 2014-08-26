@@ -14,6 +14,6 @@ angular.module('feederApp')
       },
       getObject: function(key) {
         return JSON.parse(window.localStorage[key] || null);
-      } 
+      }
     }
   });

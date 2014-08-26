@@ -17,17 +17,33 @@
         c-get subscription feed
     C-instagram login
         c-feed
-2.10 need persistant data for users(feature: single sign on?)
-    -may need database?
-    -cookies?
-2.25 feature: chronological home screen:
+
+c-3 need persistant data for users(feature: single sign on?)
+    not needed-may need database?
+    c-localStoreage used
+    -may need to revisit for token advancement
+
+4 feature: chronological home screen:
 c-:hotfix - dynamic passport redirects
-    -get all avalable feeds
-    -merge them based on time
-    -display with pretty colors
+    c-get all avalable feeds
+    c-merge them based on time
+        c-need to convert times first
+        c-back or front end? backend time conversions, front end sorting
+        c-check out moment js
+        c-sort
+c-:hotfix - cache api calls for testing(need time stamp for refreshes)
+    c-display correct data per article
+    
+5. todos:
+    -get youtube link
+    c-get twitter user profile pic
+    -twitter links and stuff filter
+    -make directives for styling different articles
+    -timestamp api calls
+    -refresh api tokens
     -checkboxes for adding and removing feeds
 
-2.5 write tests:
+6 write tests:
     c-mock objects
     c-api calls
     -directives
@@ -35,11 +51,11 @@ c-:hotfix - dynamic passport redirects
         filters
     -e2e ??
 
-2.75 models for data consistancy/ prevent api calls
-
-3. deployment procedure
+7. deployment procedure
     -figure out a way to do a deployment. heroku?
-5. news rss feeds?
+8ish. news rss feeds?
+
+
 **other goals
     mobile friendly(media-queries)
     pages for each sign in 

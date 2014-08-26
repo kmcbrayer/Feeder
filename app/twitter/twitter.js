@@ -9,7 +9,8 @@
  */
 angular.module('feederApp')
   .controller('TwitterCtrl', function ($scope,$http, UserService) {
-    if (UserService.isLoggedIntoTwitter === false){
+    $scope.user = null;
+    if (UserService.userData !==null){
       $http.get('/api/twitter/currentUser').success(function(user) {
         var userData = {
           userName :    user._json.screen_name,
@@ -18,14 +19,20 @@ angular.module('feederApp')
         }
         UserService.setUserData('twitter', userData);
 
-        $scope.user = UserService.info.twitter;
-        // set logged in to true
-        UserService.userData.isLoggedIntoTwitter = true;
-        $scope.hasUser = true;
+        $scope.user = UserService.userData.info.twitter;
       });
     } else {
+      //will need to get new token I think.
       $scope.user = UserService.userData.info.twitter;
-      $scope.hasUser = UserService.userData.isLoggedIntoTwitter;
+    }
+    $scope.hasUser = function() {
+      if ($scope.user === null) {
+        UserService.setLoggedIn('twitter', false);
+        return false;
+      } else {
+        UserService.setLoggedIn('twitter', true);
+        return true;
+      }
     }
     $http.get('/api/twitter/statuses').success(function(data) {
     	$scope.dataList = data;

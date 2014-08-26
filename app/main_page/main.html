@@ -1,6 +1,25 @@
 
 <div class="main_page">
-  Twitter: {{twitterList[0].date}}</br>
-  Youtube: {{youtubeList[0].date}}</br>
-  Instagram: {{instagramList[0].date}}</br>
+  <ul>
+    <li ng-repeat="article in dataList">
+      <div ng-if="article.type == 'twitter' ">
+        <image ng-src="{{article.photo}}" >
+        date: {{article.date | date : 'short'}}</br>
+        tweet: {{article.caption}}</br>
+        name: {{article.user}}
+      </div>
+      <div ng-if="article.type == 'youtube' ">
+        <image ng-src="{{article.thumb}}"></br>
+        title: {{article.title}}</br>
+        date: {{article.date | date : 'date' }}</br>
+        channel: {{article.channelTitle}}
+      </div>
+      <div ng-if="article.type == 'instagram' ">
+        <image ng-src="{{article.photo}}"  ></br>
+        User: {{article.user}}</br>
+        #Likes: {{article.likeCount}}</br>
+        Caption: {{article.caption}}</br>
+        Date : {{article.date | date : 'short'}}
+      </div>
+  </ul>
 </div>

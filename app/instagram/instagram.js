@@ -2,20 +2,29 @@
 
 angular.module('feederApp')
   .controller('InstagramCtrl', function($scope, $http, UserService) {
-    if (UserService.isLoggedIntoInstagram === false){
+    $scope.user = null;
+    if (UserService.userData.info.instagram.userName){
       $http.get('/api/instagram/currentUser').success(function(user) {
-        UserService.info.instagram.userName = user.username;
-        UserService.info.instagram.displayName = user.displayName;
-        UserService.info.instagram.photoUrl = user._json.data.profile_picture,
+        var userData = {
+          userName : user.username,
+          displayName : user.displayName,
+          photoUrl : user._json.data.profile_picture
+        }
+        UserService.setUserData('instagram', userData);
 
-        $scope.user = UserService.info.instagram;
-        // set logged in to true
-        UserService.isLoggedIntoInstagram = true;
-        $scope.hasUser = true;
+        $scope.user = UserService.userData.info.instagram;
       });
     } else {
-      $scope.user = UserService.info.instagram;
-      $scope.hasUser = UserService.isLoggedIntoInstagram;
+      $scope.user = UserService.userData.info.instagram;
+    }
+    $scope.hasUser = function() {
+      if ($scope.user === null) {
+        UserService.setLoggedIn('instagram', false);
+        return false;
+      } else {
+        UserService.setLoggedIn('instagram', true);
+        return true;
+      }
     }
     
     $http.get('/api/instagram/feed').success(function(feed) {

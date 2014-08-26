@@ -1,28 +1,40 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('MainCtrl', function ($scope, $http, UserService) {
+  .controller('MainCtrl', function ($scope, $http, $q, UserService) {
     //if the user is signed into twitter
     var twitterList = [];
     var instagramList = [];
     var youtubeList = [];
     $scope.dataList = [];
     //if the user is logged in get feed
-    if (UserService.isLoggedIntoTwitter) {
+    $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {
-        $scope.twitterList = data;
-      });
-    }
-    if (UserService.isLoggedIntoInstagram) {
+        twitterList = data;
+      }),
       $http.get('/api/instagram/feed').success(function(feed) {
-        $scope.instagramList = feed;
-      });
-    }
-    if (UserService.isLoggedIntoYoutube) {
+        instagramList = feed;
+      }),
       $http.get('/api/youtube/subscriptions').success(function(subs) {
-        $scope.youtubeList = subs;
+        youtubeList = subs;
+      })
+    ]).then(function() {
+      if (twitterList !== []) {
+        $scope.dataList = $scope.dataList.concat(twitterList);
+      }
+      if (instagramList !== []) {
+        $scope.dataList = $scope.dataList.concat(instagramList);
+      }
+      if (youtubeList !== []) {
+        $scope.dataList = $scope.dataList.concat(youtubeList);
+      }
+      $scope.dataList = $scope.dataList.sort(function(a, b) {
+        if(a.date > b.date)
+          return -1;
+        if(a.date < b.date)
+          return 1;
+        return 0
       });
-    }
-    //compile list into dataList
+    });
 
   });

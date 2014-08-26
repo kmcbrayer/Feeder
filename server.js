@@ -40,7 +40,7 @@ app.get('/api/facebook/currentUser', api.fbUser(store));
 app.get('/api/facebook/feed', fbAPI.feed)
 //twitter
 app.get('/api/twitter/currentUser', api.twitUser(store));
-app.get('/api/twitter/statuses', twitAPI.statuses)
+app.get('/api/twitter/statuses', twitAPI.statuses(store))
 //youtube
 app.get('/api/youtube/currentUser', api.ytUser(store));
 app.get('/api/youtube/subscriptions', ytAPI.subscriptions(store));
