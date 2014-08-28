@@ -2,7 +2,8 @@
 
 angular.module('feederApp', [
   'ngCookies',
-  'ngRoute'
+  'ngRoute',
+  'ngSanitize'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

@@ -7,12 +7,5 @@
   <image ng-src="{{user.photoUrl}}">
 </div>
 <div ng-show="hasUser()">
-	<ul>
-		<li ng-repeat="tweet in dataList">
-			<image ng-src="{{tweet.photo}}"> 
-			date: {{tweet.date | date : 'short'}}</br>
-			tweet: {{tweet.caption}}</br>
-			name: {{tweet.user}}
-		</li>
-	</ul>
+		<tweetList dataList="dataList">
 </div>

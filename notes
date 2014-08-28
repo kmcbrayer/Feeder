@@ -23,7 +23,7 @@ c-3 need persistant data for users(feature: single sign on?)
     c-localStoreage used
     -may need to revisit for token advancement
 
-4 feature: chronological home screen:
+c-4 feature: chronological home screen:
 c-:hotfix - dynamic passport redirects
     c-get all avalable feeds
     c-merge them based on time
@@ -35,13 +35,15 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-display correct data per article
     
 5. todos:
-    -get youtube link
+    c-get youtube link
     c-get twitter user profile pic
-    -twitter links and stuff filter
+    c-twitter links and stuff filter
     -make directives for styling different articles
     -timestamp api calls
     -refresh api tokens
     -checkboxes for adding and removing feeds
+    -better sort alorithm for chrono page
+    -re-think is-logged-in logic
 
 6 write tests:
     c-mock objects

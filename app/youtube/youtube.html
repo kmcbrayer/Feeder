@@ -1,6 +1,7 @@
 <div ng-show="!hasUser()">
   <a href="/authin/youtube" target="_self" class="btn btn-info">Youtube</a>
 </div>
+
 <div ng-show="hasUser()">
   User Name : {{user.userName}}</br>
   Display Name : {{user.displayName}}</br>
@@ -8,10 +9,11 @@
 </div>
 <div ng-show="hasUser()">
 <div ng-repeat="article in dataList">
-  <image ng-src="{{article.thumb}}" ></br>
-  title: {{article.title}}</br>
-  date: {{article.date | date : 'date' }}</br>
-  channel: {{article.channelTitle}}</br>
-  </br>
+  <a ng-href="http://www.youtube.com/watch?v={{article.videoId}}">
+    <image ng-src="{{article.thumb}}" ></br>
+    title: {{article.title}}</br>
+    date: {{article.date | date : 'date' }}</br>
+    channel: {{article.channelTitle}}</br>
+  </a>
 </div>
 </div>
