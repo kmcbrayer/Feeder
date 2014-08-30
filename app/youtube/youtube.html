@@ -9,11 +9,6 @@
 </div>
 <div ng-show="hasUser()">
 <div ng-repeat="article in dataList">
-  <a ng-href="http://www.youtube.com/watch?v={{article.videoId}}">
-    <image ng-src="{{article.thumb}}" ></br>
-    title: {{article.title}}</br>
-    date: {{article.date | date : 'date' }}</br>
-    channel: {{article.channelTitle}}</br>
-  </a>
+  <ytube ytube="article"></ytube>
 </div>
 </div>

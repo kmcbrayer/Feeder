@@ -11,8 +11,8 @@
         C-in /twitter do an "if (!user) show login"
     c-facebook sign in
 *        -get user timelines -- can't pull feeds w/o facebook approval
-    c-hotfix: set up userdata in local storeage
-    c-hotfix: seperate out login stratagies
+c-hotfix: set up userdata in local storeage
+c-hotfix: seperate out login stratagies
     c-youtube sign in
         c-get subscription feed
     C-instagram login
@@ -38,9 +38,10 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-get youtube link
     c-get twitter user profile pic
     c-twitter links and stuff filter
-    -make directives for styling different articles
+    c-make directives for styling different articles
     -timestamp api calls
     -refresh api tokens
+    -concat CSS
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page
     -re-think is-logged-in logic

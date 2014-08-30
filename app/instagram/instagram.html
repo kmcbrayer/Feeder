@@ -9,12 +9,6 @@
 
 <div ng-show="hasUser()">
   <div ng-repeat="article in dataList">
-    <a ng-href="{{article.link}}">
-      <image ng-src="{{article.photo}}"  ></br>
-      User: {{article.user}}</br>
-      #Likes: {{article.likeCount}}</br>
-      Caption: {{article.caption}}
-      Date : {{article.date | date : 'short'}}
-    </a>
+    <igram igram="article"></igram>
   </div>
 </div>

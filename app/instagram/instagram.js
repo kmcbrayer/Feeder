@@ -3,7 +3,7 @@
 angular.module('feederApp')
   .controller('InstagramCtrl', function($scope, $http, UserService) {
     $scope.user = null;
-    if (UserService.userData.info.instagram.userName){
+    if (UserService.userData){
       $http.get('/api/instagram/currentUser').success(function(user) {
         var userData = {
           userName : user.username,

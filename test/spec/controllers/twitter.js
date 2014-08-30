@@ -10,7 +10,7 @@ describe('Controller: TwitterCtrl', function () {
     $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_,$controller, $rootScope, twitterUser, twitterStatuses) {
+  beforeEach(inject(function (_$httpBackend_,$controller, $rootScope, UserService, twitterUser, twitterStatuses) {
     $httpBackend = _$httpBackend_;
     //backend mock response
     $httpBackend.when('GET', '/api/twitter/currentUser')
