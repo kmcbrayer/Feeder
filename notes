@@ -67,3 +67,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     pull to refresh
     remember sign in(cookies?)
         time since last used: if after certain time auto refresh
+
+images:
+settings gear:
+    http://thenounproject.com/term/gear/2789/

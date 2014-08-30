@@ -7,16 +7,8 @@ angular.module('feederApp')
       'link': '/'
     },
     {
-      'title': 'reddit',
-      'link': '/redditAww'
-    },
-    {
       'title': 'twitter',
       'link': '/twitter'
-    },
-    {
-      'title': 'facebook',
-      'link': '/facebook'
     },
     {
       'title': 'youtube',

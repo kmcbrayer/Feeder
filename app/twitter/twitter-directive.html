@@ -1,6 +1,8 @@
-<div ng-repeat="tweet in dataList">
-  <image ng-src="{{tweet.photo}}"> 
-  date: {{tweet.date | date : 'short'}}</br>
-  <div ng-bind-html="tweet.caption | twitterCaption"></div>
-  name: {{tweet.user}}
+<div class="row tdContainer">
+  <image class="tdThumb" ng-src="{{tweet.photo}}">
+  <div class="tdContent">
+    <div class="tdUser">{{tweet.user}}</div>
+    <div class="tdDate">{{tweet.date | date : 'short'}}</div>
+    <div class="tdCaption" ng-bind-html="tweet.caption | twitterCaption"></div>
+  </div>
 </div>

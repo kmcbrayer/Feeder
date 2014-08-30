@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('feederApp')
-.directive('tweetList', function() {
-  console.log('tweetList')
+.directive('tweet', function() {
   return {
     restrict: 'E',
     templateUrl: 'twitter/twitter-directive.html',
     scope: {
-      dataList: "="
+      tweet: "="
     }
   }
 })

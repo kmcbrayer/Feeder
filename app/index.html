@@ -18,6 +18,8 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="twitter/twitter.css">
+
     <!-- endbuild -->
   </head>
   <body ng-app="feederApp">
@@ -26,15 +28,15 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-controller="AppCtrl">
-        <div class="userModel" style"position: absolute;top: 0px;left:0px;">
-        <div ng-click="clear()" style="fontweight:bold;">Clear User</div>
-        <div onclick="window.localStorage.clear();" style="fontweight:bold;">Clear store</div>
-        {{user}}
+    <div class="container" ng-controller="AppCtrl">
+        <div ng-if="testMode" class="userModel" style"position: absolute;top: 0px;left:0px;">
+            <div ng-click="clear()">Clear User</div>
+            <div onclick="window.localStorage.clear();" style="fontweight:bold;">Clear store</div>
+            {{user}}
         </div>
         <!-- this is where the header will go -->
         <div ng-include="'navbar/navbar.html'"></div>
-        <div class="container" ng-view=""></div>
+        <div  ng-view=""></div>
     </div>
 
     <!--[if lt IE 9]>
