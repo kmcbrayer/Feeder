@@ -18,10 +18,8 @@ c-hotfix: seperate out login stratagies
     C-instagram login
         c-feed
 
-c-3 need persistant data for users(feature: single sign on?)
-    not needed-may need database?
+c-3 need persistant data for users(feature: single sign on?)not needed-may need database?
     c-localStoreage used
-    -may need to revisit for token advancement
 
 c-4 feature: chronological home screen:
 c-:hotfix - dynamic passport redirects
@@ -39,16 +37,36 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-get twitter user profile pic
     c-twitter links and stuff filter
     c-make directives for styling different articles
-    -timestamp api calls
-    -refresh api tokens
+    -re-think is-logged-in logic
+        -need to watch localstoreage inside isloggedinto functions.
+
+    -pull to refresh feature
+        -timestamp api calls from backend
+        -if inside 5 min hit cache
+        -if force param is used dont hit cache
+            || req.param('force') == true
+        -scope.pullToRefresh = function() {
+            $http({
+                url : 'api/blah/blah',
+                method : "GET",
+                params : {force : true}
+            ).success(function(data) {
+                dataList = data;
+            });
+        }
+        -angular gesture directives
     -concat CSS
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page
-    -re-think is-logged-in logic
+     
 
 6 write tests:
     c-mock objects
-    c-api calls
+    -mock services
+        handeled case for: 
+            -is logged in, return correct user
+        need case for:
+            -not logged in, return null user
     -directives
         ng-show
         filters

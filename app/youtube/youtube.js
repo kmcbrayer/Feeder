@@ -1,32 +1,17 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('YoutubeCtrl', function($scope, $http, UserService) {
-     $scope.user = null;
-    if (UserService.userData){
-      $http.get('/api/youtube/currentUser').success(function(user) {
-        var userData = {
-          userName : user._json.screen_name,
-          displayName : user._json.name,
-          photoUrl : user._json.picture
-        }
-        UserService.setUserData('youtube',userData);
-        $scope.user = userData;
-        // set logged in to true
-      });
-    } else {
-      $scope.user = UserService.userData.info.youtube;
-    }
-    $scope.hasUser = function() {
-      if ($scope.user === null) {
-        UserService.setLoggedIn('youtube', false);
-        return false;
+  .controller('YoutubeCtrl', function($scope, $http, UserService, localStorage) {
+    $scope.$watch( UserService.isLoggedIntoYoutube(), function() {
+      $scope.user = UserService.getYoutubeInfo();
+      $scope.hasUser = UserService.isLoggedIntoYoutube();
+    });
+    $http.get('/api/youtube/subscriptions').success(function(data) {
+      if (data.status === 304){
+        localStorage.setObject('ytUser', null);
+        $scope.hasUser = UserService.isLoggedIntoYoutube();
       } else {
-        UserService.setLoggedIn('youtube', true);
-        return true;
+        $scope.dataList = data;
       }
-    }
-    $http.get('/api/youtube/subscriptions').success(function(subs) {
-      $scope.dataList = subs;
     })
   });

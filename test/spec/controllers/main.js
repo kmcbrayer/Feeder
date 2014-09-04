@@ -10,12 +10,21 @@ describe('Controller: MainCtrl', function () {
     $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope,twitterUser) {
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope,
+                              twitterUser,twitterStatuses,instagramFeed,youtubeSubs) {
     $httpBackend = _$httpBackend_;
     //backend mock response
-    $httpBackend.when('GET', '/api/twitter/currentUser')
+    $httpBackend.when('GET', '/api/twitter/statuses')
       .respond(
-        twitterUser
+        twitterStatuses
+      );
+    $httpBackend.when('GET', '/api/instagram/feed')
+      .respond(
+        instagramFeed
+      );
+    $httpBackend.when('GET', '/api/youtube/subscriptions')
+      .respond(
+        youtubeSubs
       );
     scope = $rootScope.$new();
     //init controller
@@ -25,8 +34,9 @@ describe('Controller: MainCtrl', function () {
   }));
 
   it('should attach the current user to the scope', function () {
-    expect(scope.user).not.toBe(null);
+    expect(scope.twitterList).not.toBe(null);
+    expect(scope.instagramList).not.toBe(null);
+    expect(scope.youtubeList).not.toBe(null);
     $httpBackend.flush();
-    expect(scope.user.id).toBe(7);
   });
 });

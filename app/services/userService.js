@@ -33,6 +33,14 @@ angular.module('feederApp')
       return localStorage.getObject('twitUser');
     };
 
+    userData.isLoggedIntoInstagram = function() {
+      if (!localStorage.getObject('igUser') || localStorage.getObject('igUser').userName === null) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+
     userData.getInstagramInfo = function() {
       if (!localStorage.getObject('igUser') || localStorage.getObject('igUser').userName === null) {
         $http.get('/api/instagram/currentUser').success(function(user) {
@@ -44,7 +52,6 @@ angular.module('feederApp')
           localStorage.setObject('igUser', userData);
         })
         .error(function(err) {
-          console.log('here')
           var userData = {
             userName :    null,
             displayName : null,
@@ -55,74 +62,35 @@ angular.module('feederApp')
       }
       return localStorage.getObject('igUser');
     };
+    userData.isLoggedIntoYoutube = function() {
+      if (!localStorage.getObject('ytUser') || localStorage.getObject('ytUser').userName === null) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+    userData.getYoutubeInfo = function() {
+      if (!localStorage.getObject('ytUser') || localStorage.getObject('ytUser').userName === null) {
+        $http.get('/api/youtube/currentUser').success(function(user) {
+          var ytUser = {
+            userName : user._json.screen_name,
+            displayName : user._json.name,
+            photoUrl : user._json.picture
+          };
+          localStorage.setObject('ytUser', ytUser);
+        })
+        .error(function(err) {
+          var ytUser = {
+            userName :    null,
+            displayName : null,
+            photoUrl :    null
+          };
+          localStorage.setObject('ytUser', ytUser);
+        });
+      }
+      return localStorage.getObject('ytUser');
+    };
 
     //return service
     return userData;
   });
-
-/*
-$http.get('/api/twitter/currentUser').success(function(user) {
-
-      userData = {
-        info : {
-          twitter : {
-            userName :    null,
-            displayName : null,
-            photoUrl :    null
-          },
-          youtube : {
-            userName :    null,
-            displayName : null,
-            photoUrl :    null
-          },
-          instagram : {
-            userName :    null,
-            displayName : null,
-            photoUrl :    null
-          }
-        },
-        isLoggedIntoTwitter :     false,
-        isLoggedIntoYoutube :     false,
-        isLoggedIntoInstagram :   false
-      };
-    }
-    return {
-      getTwitterInfo : function() {
-        return userData.info.twitter();
-      },
-    };
-}
-    
-
-    var ret = {
-      "userData" : userData,
-      setUserData : function(type, data) {
-        if (type === 'twitter'){
-          userData.info.twitter = data;
-        } 
-        if (type === 'instagram') {
-          userData.info.instagram = data;
-        }
-        if (type === 'youtube') {
-          userData.info.youtube = data;
-        }
-
-        localStorage.setObject('userData', userData);
-      },
-      setLoggedIn : function(type,bool) {
-        if (type === 'twitter'){
-          userData.isLoggedIntoTwitter = bool;
-        } 
-        if (type === 'instagram') {
-          userData.isLoggedIntoInstagram = bool;
-        }
-        if (type === 'youtube') {
-          userData.isLoggedIntoYoutube = bool;
-        }
-
-        localStorage.setObject('userData', userData);
-      }
-    };
-    return ret;
-  });
-*/

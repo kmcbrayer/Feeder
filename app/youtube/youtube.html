@@ -1,13 +1,13 @@
-<div ng-show="!hasUser()">
+<div ng-show="!hasUser">
   <a href="/authin/youtube" target="_self" class="btn btn-info">Youtube</a>
 </div>
 
-<div ng-show="hasUser()">
+<div ng-show="hasUser">
   User Name : {{user.userName}}</br>
   Display Name : {{user.displayName}}</br>
   <image ng-src="{{user.photoUrl}}" style="height: 50px;">
 </div>
-<div ng-show="hasUser()">
+<div ng-show="hasUser">
 <div ng-repeat="article in dataList">
   <ytube ytube="article"></ytube>
 </div>

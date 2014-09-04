@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feederApp')
-  .value('twitterStatuses',
+  .value('instagramFeed',
     {"attribution":null,
       "tags":["old","weirdos","soulmates","foreverlove"],
       "type":"image",
