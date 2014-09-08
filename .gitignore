@@ -4,4 +4,3 @@ public
 .sass-cache
 bower/bower_components
 heroku
-lib/controllers/secrets.js
