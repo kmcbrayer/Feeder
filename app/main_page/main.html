@@ -1,4 +1,12 @@
-
+<div ng-show="!hasTwitterUser">
+	<a href="/authin/twitter" target="_self" class="btn btn-info">Twitter</a>
+</div>
+<div ng-show="!hasYoutubeUser">
+	<a href="/authin/youtube" target="_self" class="btn btn-info">Twitter</a>
+</div>
+<div ng-show="!hasInstagramUser">
+	<a href="/authin/instagram" target="_self" class="btn btn-info">Twitter</a>
+</div>
 <div class="main_page">
   <div ng-repeat="article in dataList">
     <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>

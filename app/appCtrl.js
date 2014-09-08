@@ -7,5 +7,5 @@ angular.module('feederApp')
       window.localStorage.clear();
       UserService.userData = null;
     }
-    $scope.testMode = true;
+    $scope.testMode = false;
   });
