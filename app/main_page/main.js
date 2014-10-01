@@ -1,17 +1,7 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('MainCtrl', function ($scope, $http, $q, UserService) {
-    //if the user is signed into twitter
-    if (UserService.isLoggedIntoTwitter()){
-      $scope.hasTwitterUser = true;
-    }
-    if (UserService.isLoggedIntoYoutube()){
-      $scope.hasYoutubeUser = true;
-    }
-    if (UserService.isLoggedIntoInstagram()){
-      $scope.hasInstagramUser = true;
-    }
+  .controller('MainCtrl', function ($scope, $http, $q) {
     var twitterList = [];
     var instagramList = [];
     var youtubeList = [];
