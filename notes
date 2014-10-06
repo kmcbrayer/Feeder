@@ -37,9 +37,11 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-get twitter user profile pic
     c-twitter links and stuff filter
     c-make directives for styling different articles
-    -re-think is-logged-in logic
-        -need to watch localstoreage inside isloggedinto functions.
-
+    -remove localstorage
+    -remove tokens from localstorage
+    -make log out button
+    -.gitignore secrets
+    -research refresh tokens
     -pull to refresh feature
         -timestamp api calls from backend
         -if inside 5 min hit cache
