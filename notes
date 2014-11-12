@@ -37,6 +37,9 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-get twitter user profile pic
     c-twitter links and stuff filter
     c-make directives for styling different articles
+    -twitter handle link
+    -style templates
+        -main tabs iphone4 fuck up
     -remove localstorage
     -remove tokens from localstorage
     -make log out button

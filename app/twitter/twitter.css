@@ -1,16 +1,13 @@
+.tdContainer {
+	padding-bottom: 3px;
+}
 .tdThumb {
   float: left;
-}
-
-.tdContent {
-  float: left;
+  padding-top: 3px;
+  padding-right: 3px;
+  max-width:8%;
+	min-width:50px;
 }
 .tdUser {
-  float: left;
-}
-.tdDate {
-  float: left;
-}
-.tdCaption {
-    display:;
+	font-weight: bold;
 }

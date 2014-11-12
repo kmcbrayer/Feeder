@@ -1,8 +1,7 @@
 <div class="row tdContainer">
   <image class="tdThumb" ng-src="{{tweet.photo}}">
-  <div class="tdContent">
-    <div class="tdUser">{{tweet.user}}</div>
-    <div class="tdDate">{{tweet.date | date : 'short'}}</div>
-    <div class="tdCaption" ng-bind-html="tweet.caption | twitterCaption"></div>
-  </div>
+  <span class="tdUser">{{tweet.user}}</span>
+  <span class="tdDate">{{tweet.date | date : 'short'}}</span>
+  <br>
+  <div class="tdCaption" ng-bind-html="tweet.caption | twitterCaption"></div>
 </div>
