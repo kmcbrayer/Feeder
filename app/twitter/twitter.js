@@ -8,7 +8,7 @@
  * Controller of the feederApp
  */
 angular.module('feederApp')
-  .controller('TwitterCtrl', function ($scope,$http, UserService, localStorage) {
+  .controller('TwitterCtrl', function ($scope,$http) {
     $http.get('/api/twitter/statuses').success(function(data) {
       $scope.dataList = data;
     })

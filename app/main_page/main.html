@@ -11,7 +11,7 @@
 	<a href="#" target="_self" class="btn btn-info">Clear</a>
 </div>
 <br><hr>
-<div class="main_page">
+<div class="main_page" style="clear: both;">
   <div ng-repeat="article in dataList">
     <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
     <igram ng-if="article.type=='instagram'" igram="article"></igram>

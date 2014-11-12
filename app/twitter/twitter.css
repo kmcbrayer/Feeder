@@ -3,6 +3,7 @@
 }
 .tdThumb {
   float: left;
+  height: 100%;
   padding-top: 3px;
   padding-right: 3px;
   max-width:8%;
