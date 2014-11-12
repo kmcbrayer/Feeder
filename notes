@@ -37,14 +37,15 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-get twitter user profile pic
     c-twitter links and stuff filter
     c-make directives for styling different articles
-    -twitter handle link
-    -filter if date today don't display
+    C-twitter handle link
+    c-remove localstorage
     -style templates
         c-twitter
         -youtube
         -instagram
         C-main tabs iphone4 fuck up
-    -remove localstorage
+    -youtube description filter
+    -set up dev env, use express settigns?
     -remove tokens from localstorage
     -make log out button
     -.gitignore secrets
