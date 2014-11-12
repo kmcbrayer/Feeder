@@ -1,6 +1,12 @@
-<a ng-href="http://www.youtube.com/watch?v={{ytube.videoId}}"></a>
-<div>{{ytube.channelTitle}}</div>
-<image ng-src="{{ytube.thumb}}" ></br>
-<span>{{ytube.title}}</span>
-<span>{{ytube.date | date : 'date' }}</span>
-{{ytube.description}}<br>
+<div style="clear: both;">
+  <a ng-href="http://www.youtube.com/watch?v={{ytube.videoId}}">
+    <image class="ytThumb" ng-src="{{ytube.thumb}}" >
+  </a>
+  <div class="channelTitle">{{ytube.channelTitle}}</div>
+  <span>{{ytube.title}}</span>
+  <span>{{ytube.date | date : 'short'}}</span><br>
+  {{ytube.description | youtubeDescription}}<br>
+</div>
+
+
+

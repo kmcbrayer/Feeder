@@ -1,7 +1,9 @@
-<a ng-href="{{igram.link}}">
-  <image ng-src="{{igram.photo}}"  ></br>
-  User: {{igram.user}}</br>
-  #Likes: {{igram.likeCount}}</br>
-  Caption: {{igram.caption}}
-  Date : {{igram.date | date : 'short'}}
-</a>
+<div style="clear: both;">
+  <a ng-href="{{igram.link}}">
+    <image class="igThumb" ng-src="{{igram.photo}}">
+  </a>
+  <span>{{igram.user}}</span>
+  Likes: <span>{{igram.likeCount}}</span>
+  <span>{{igram.date | date : 'short'}}</span><br>
+  {{igram.caption}}
+</div>

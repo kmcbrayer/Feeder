@@ -32,19 +32,30 @@ c-:hotfix - dynamic passport redirects
 c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-display correct data per article
     
-5. todos:
+-5 feature: mobile touch controls
+    -better header
+    -swipeing controls:
+        in app wide controller called appCtrl.js
+            page counter and current page data objects
+        asyn load "pages" 
+        need swipe instructions
+
+todos:
     c-get youtube link
     c-get twitter user profile pic
     c-twitter links and stuff filter
     c-make directives for styling different articles
     C-twitter handle link
     c-remove localstorage
+    c-youtube description filter
+    c-fix youtube date filter issue
     -style templates
         c-twitter
-        -youtube
+        c-youtube
         -instagram
         C-main tabs iphone4 fuck up
-    -youtube description filter
+    -fix redirect issue
+        -middleware could be culprit
     -set up dev env, use express settigns?
     -remove tokens from localstorage
     -make log out button
@@ -68,9 +79,10 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     -concat CSS
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page
-     
 
-6 write tests:
+6.
+
+write tests:
     c-mock objects
     -mock services
         handeled case for: 
@@ -82,7 +94,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
         filters
     -e2e ??
 
-7. deployment procedure
+deployment procedure
     -figure out a way to do a deployment. heroku?
 8ish. news rss feeds?
 
@@ -90,8 +102,6 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 **other goals
     mobile friendly(media-queries)
     pages for each sign in 
-    swiping functionality for page-to-page transitions
-        cool looking transitions (stick to finger swiping)
     asyncronous loading of initial pages
     pull to refresh
     remember sign in(cookies?)
