@@ -50,19 +50,23 @@ todos:
     c-youtube description filter
     c-fix youtube date filter issue
     -style templates
-        -need mobile
+        -need mobile home page
         c-twitter
         c-youtube
         c-instagram
+            -need like icon
         C-main tabs iphone4 fuck up
+
     -fix redirect issue
         -middleware could be culprit
     c-set up dev env, use express settigns?
+    -angular gesture directives
     -remove tokens from localstorage
         -need tokens, save to instance of userData object
     -make log out button
     -.gitignore secrets
     -research refresh tokens
+
     -pull to refresh feature
         -timestamp api calls from backend
         -if inside 5 min hit cache
@@ -77,7 +81,6 @@ todos:
                 dataList = data;
             });
         }
-        -angular gesture directives
     -concat CSS
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page

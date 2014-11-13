@@ -1,7 +1,52 @@
 /* Space out content a bit */
+html {
+  min-height: 100% !important;
+  height:100%;
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 100% !important;
+  height:100%;
+}
+
+code {
+  background-color: #474646;
+  color: #FCFCFC;
+}
+pre {
+  background-color: #474646;
+  color: #FCFCFC;
+}
+.container {
+  min-height: 100% !important;
+  height:100%;
+  padding: 0 !important;
+}
+.ngViewWrapper {
+  min-height: 100% !important;
+  height:100%;
+}
+#content {
+  position: relative;
+  min-height: 100% !important;
+  height:100%;
+  width:100%;
+  float: left;
+}
+.page {
+  background-color: green;
+  position: absolute;
+  min-height: 100% !important;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+}
+
+.clear {
+  clear: both;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -75,5 +120,10 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  body {
+    padding: 0 !important;
   }
 }

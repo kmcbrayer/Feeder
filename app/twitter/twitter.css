@@ -1,4 +1,5 @@
 .tdContainer {
+  clear: both;
 	padding-bottom: 3px;
 }
 .tdThumb {
