@@ -50,14 +50,16 @@ todos:
     c-youtube description filter
     c-fix youtube date filter issue
     -style templates
+        -need mobile
         c-twitter
         c-youtube
-        -instagram
+        c-instagram
         C-main tabs iphone4 fuck up
     -fix redirect issue
         -middleware could be culprit
-    -set up dev env, use express settigns?
+    c-set up dev env, use express settigns?
     -remove tokens from localstorage
+        -need tokens, save to instance of userData object
     -make log out button
     -.gitignore secrets
     -research refresh tokens
@@ -95,6 +97,7 @@ write tests:
     -e2e ??
 
 deployment procedure
+    -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
 8ish. news rss feeds?
 
