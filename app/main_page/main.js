@@ -38,5 +38,43 @@ angular.module('feederApp')
         return 0
       });
     });
+    $scope.pageSet = [
+      {
+        name: "Main",
+        isActive: true,
+        position: "first"
+      },
+      {
+        name: "Twitter",
+        isActive: false,
+        position: "second"
+      },
+      {
+        name: "Youtube",
+        isActive: false,
+        position: "third"
+      },
+      {
+        name: "Instagram",
+        isActive: false,
+        position: "fourth"
+      }
+    ];
+    $scope.active=0;
+
+    $scope.swipeLeft = function() {
+      
+      //active tab controls
+      $scope.pageSet[$scope.active].isActive = false;
+
+      $scope.active++;
+
+      if ($scope.active > 3){
+        $scope.active=0;
+      }
+      $scope.pageSet[$scope.active].isActive = true;
+      // insert cool transitions? 
+
+    }
 
   });

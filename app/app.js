@@ -3,6 +3,7 @@
 angular.module('feederApp', [
   'ngCookies',
   'ngRoute',
+  'ngTouch',
   'ngSanitize'
 ])
   .config(function ($routeProvider, $locationProvider) {
