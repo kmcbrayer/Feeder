@@ -39,6 +39,8 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
             page counter and current page data objects
         asyn load "pages" 
         need swipe instructions
+        
+-6 page length for covering data?
 
 todos:
     c-get youtube link

@@ -4,26 +4,38 @@
 <br><hr>
 <div id="content" class="clear">
   <div class="page" ng-repeat="page in pageSet">
-    <div ng-class="{{page.position}}" ngIf="{{page.name == 'Instagram'}}">
-      <div ng-repeat="article in instagramList" class="dataContainer">
-        <igram igram="article"></igram>
+
+    <div ng-if="page.name == 'Instagram'">
+      <div ng-class="page.position" >
+        <div ng-repeat="article in instagramList" class="dataContainer" ng-swipe-left="swipeLeft()">
+          <igram igram="article"></igram>
+        </div>
       </div>
     </div>
-    <div ng-class="{{page.position}}" ngIf="{{page.name == 'Twitter'}}">
-      <div ng-repeat="article in youtubeListList" class="dataContainer">
-        <ytube ytube="article"></ytube>
+
+    <div ng-if="page.name == 'Twitter'">
+      <div ng-class="page.position" >
+        <div ng-repeat="tweet in twitterList" class="dataContainer" ng-swipe-left="swipeLeft()">
+          <tweet tweet="tweet"></tweet>
+        </div>
       </div>
     </div>
-    <div ng-class="{{page.position}}" ngIf="{{page.name == 'Youtube'}}">
-      <div  ng-repeat="tweet in twitterList" class="dataContainer">
-        <tweet tweet="tweet"></tweet>
+
+    <div ng-if="page.name == 'Youtube'">
+      <div ng-class="page.position" >
+        <div  ng-repeat="article in youtubeList" class="dataContainer" ng-swipe-left="swipeLeft()">
+          <ytube ytube="article"></ytube>
+        </div>
       </div>
     </div>
-    <div ng-class="{{page.position}}" ngIf="{{page.name == 'Main'}}">
-      <div ng-repeat="article in dataList" class="dataContainer" ng-swipe-left="swipeLeft()">
-        <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
-        <igram ng-if="article.type=='instagram'" igram="article"></igram>
-        <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>
+
+    <div ng-if="page.name == 'Main'">
+      <div ng-class="page.position" >
+        <div ng-repeat="article in dataList" class="dataContainer" ng-swipe-left="swipeLeft()">
+          <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
+          <igram ng-if="article.type=='instagram'" igram="article"></igram>
+          <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>
+        </div>
       </div>
     </div>
   </div>

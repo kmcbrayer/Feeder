@@ -63,13 +63,24 @@ angular.module('feederApp')
     $scope.active=0;
 
     $scope.swipeLeft = function() {
-      
       //active tab controls
       $scope.pageSet[$scope.active].isActive = false;
-
+      
+      $scope.pageSet.forEach(function(page) {
+        console.log(page)
+        var pos = page.position;
+        if (pos == "first") 
+          page.position = "fourth"
+        if (pos == "second") 
+          page.position = "first"
+        if (pos == "third") 
+          page.position = "second"
+        if (pos == "fourth") 
+          page.position = "third"
+      });
       $scope.active++;
 
-      if ($scope.active > 3){
+      if ($scope.active > 3) {
         $scope.active=0;
       }
       $scope.pageSet[$scope.active].isActive = true;

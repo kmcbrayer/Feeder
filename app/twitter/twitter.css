@@ -13,3 +13,6 @@
 .tdUser {
 	font-weight: bold;
 }
+.tdCaption {
+  word-wrap: break-word;
+}
