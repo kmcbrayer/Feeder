@@ -7,7 +7,10 @@
 
     <div ng-if="page.name == 'Instagram'">
       <div ng-class="page.position" >
-        <div ng-repeat="article in instagramList" class="dataContainer" ng-swipe-left="swipeLeft()">
+        <div ng-repeat="article in instagramList" 
+        class="dataContainer" 
+        ng-swipe-left="swipeLeft()" 
+        ng-swipe-right="swipeRight()">
           <igram igram="article"></igram>
         </div>
       </div>
@@ -15,7 +18,10 @@
 
     <div ng-if="page.name == 'Twitter'">
       <div ng-class="page.position" >
-        <div ng-repeat="tweet in twitterList" class="dataContainer" ng-swipe-left="swipeLeft()">
+        <div ng-repeat="tweet in twitterList" 
+        class="dataContainer" 
+        ng-swipe-left="swipeLeft()" 
+        ng-swipe-right="swipeRight()">
           <tweet tweet="tweet"></tweet>
         </div>
       </div>
@@ -23,7 +29,10 @@
 
     <div ng-if="page.name == 'Youtube'">
       <div ng-class="page.position" >
-        <div  ng-repeat="article in youtubeList" class="dataContainer" ng-swipe-left="swipeLeft()">
+        <div  ng-repeat="article in youtubeList" 
+        class="dataContainer" 
+        ng-swipe-left="swipeLeft()" 
+        ng-swipe-right="swipeRight()">
           <ytube ytube="article"></ytube>
         </div>
       </div>
@@ -31,7 +40,10 @@
 
     <div ng-if="page.name == 'Main'">
       <div ng-class="page.position" >
-        <div ng-repeat="article in dataList" class="dataContainer" ng-swipe-left="swipeLeft()">
+        <div ng-repeat="article in dataList" 
+        class="dataContainer" 
+        ng-swipe-left="swipeLeft()" 
+        ng-swipe-right="swipeRight()">
           <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
           <igram ng-if="article.type=='instagram'" igram="article"></igram>
           <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>

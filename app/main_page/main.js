@@ -86,6 +86,29 @@ angular.module('feederApp')
       $scope.pageSet[$scope.active].isActive = true;
       // insert cool transitions? 
 
+    };
+
+    $scope.swipeRight = function() {
+      $scope.pageSet[$scope.active].isActive = false;
+      $scope.pageSet.forEach(function(page) {
+        console.log(page)
+        var pos = page.position;
+        if (pos == "first") 
+          page.position = "second"
+        if (pos == "second") 
+          page.position = "third"
+        if (pos == "third") 
+          page.position = "fourth"
+        if (pos == "fourth") 
+          page.position = "first"
+      });
+
+      $scope.active--;
+
+      if ($scope.active <0) {
+        $scope.active = 3;
+      }
+      $scope.pageSet[$scope.active].isActive = true;
     }
 
   });
