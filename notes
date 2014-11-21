@@ -42,6 +42,8 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
         
 -6 page length for covering data?
 -7 if logged in buttons set active and positions(act like links)?
+-8 if no youtube links return popular links
+    -let user know with bar at the top of the page with X button
 
 todos:
     c-get youtube link

@@ -51,7 +51,9 @@ app.get('/api/instagram/feed', igAPI.feed(store));
 
 
 // Angular Routes
+app.get('/images/*', index.images);
 app.get('/*', index.index);
+
 
 // Start server
 var port = process.env.PORT || 3000;
