@@ -1,16 +1,4 @@
 /* Space out content a bit */
-html {
-  min-height: 100% !important;
-  height:100%;
-}
-
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  min-height: 100% !important;
-  height:100%;
-}
-
 code {
   background-color: #474646;
   color: #FCFCFC;
@@ -19,14 +7,32 @@ pre {
   background-color: #474646;
   color: #FCFCFC;
 }
-.container {
-  min-height: 100% !important;
-  height:100%;
-  padding: 0 !important;
+.first {
+  z-index: 4;
+  position: relative;
+  top:0;
+  left:0;
 }
-.ngViewWrapper {
-  min-height: 100% !important;
-  height:100%;
+.second {
+  z-index: 3;
+  position: relative;
+  top:0;
+  left:0;
+}
+.third {
+  z-index: 2;
+  position: relative;
+  top:0;
+  left:0;
+}
+.fourth {
+  z-index: 1;
+  position: relative;
+  top:0;
+  left:0;
+}
+.container {
+  padding: 0 !important;
 }
 #content {
   position: relative;
@@ -35,8 +41,10 @@ pre {
   width:100%;
   float: left;
 }
+.dataContainer {
+  background-color: white;
+}
 .page {
-  background-color: green;
   position: absolute;
   min-height: 100% !important;
   height:100%;

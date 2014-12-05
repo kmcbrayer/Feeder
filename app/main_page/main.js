@@ -38,5 +38,77 @@ angular.module('feederApp')
         return 0
       });
     });
+    $scope.pageSet = [
+      {
+        name: "Main",
+        isActive: true,
+        position: "first"
+      },
+      {
+        name: "Twitter",
+        isActive: false,
+        position: "second"
+      },
+      {
+        name: "Youtube",
+        isActive: false,
+        position: "third"
+      },
+      {
+        name: "Instagram",
+        isActive: false,
+        position: "fourth"
+      }
+    ];
+    $scope.active=0;
+
+    $scope.swipeLeft = function() {
+      //active tab controls
+      $scope.pageSet[$scope.active].isActive = false;
+      
+      $scope.pageSet.forEach(function(page) {
+        console.log(page)
+        var pos = page.position;
+        if (pos == "first") 
+          page.position = "fourth"
+        if (pos == "second") 
+          page.position = "first"
+        if (pos == "third") 
+          page.position = "second"
+        if (pos == "fourth") 
+          page.position = "third"
+      });
+      $scope.active++;
+
+      if ($scope.active > 3) {
+        $scope.active=0;
+      }
+      $scope.pageSet[$scope.active].isActive = true;
+      // insert cool transitions? 
+
+    };
+
+    $scope.swipeRight = function() {
+      $scope.pageSet[$scope.active].isActive = false;
+      $scope.pageSet.forEach(function(page) {
+        console.log(page)
+        var pos = page.position;
+        if (pos == "first") 
+          page.position = "second"
+        if (pos == "second") 
+          page.position = "third"
+        if (pos == "third") 
+          page.position = "fourth"
+        if (pos == "fourth") 
+          page.position = "first"
+      });
+
+      $scope.active--;
+
+      if ($scope.active <0) {
+        $scope.active = 3;
+      }
+      $scope.pageSet[$scope.active].isActive = true;
+    }
 
   });

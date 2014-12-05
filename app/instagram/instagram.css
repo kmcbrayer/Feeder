@@ -3,3 +3,8 @@
   padding-top: 3px;
   padding-right: 3px;
 }
+.like-icon {
+  background: url("/images/ic_favorite_black_24dp.png") no-repeat top left;
+  height:25px;
+  width:25px;
+}

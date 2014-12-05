@@ -1,38 +1,59 @@
-<div class="pull-left" style="padding-right: 5px;" >
-	<a href="/authin/twitter" target="_self" class="btn btn-info">Twitter</a>
-</div>
-<div class="pull-left" style="padding-right: 5px;" >
-	<a href="/authin/youtube" target="_self" class="btn btn-info">Youtube</a>
-</div>
-<div class="pull-left" style="padding-right: 5px;" >
-	<a href="/authin/instagram" target="_self" class="btn btn-info">Instagram</a>
-</div>
-<div class="pull-left" style="padding-right: 5px;" >
-	<a href="#" target="_self" class="btn btn-info">Clear</a>
+<div class="nav nav-pills pull-left" ng-repeat="link in pageSet" class="pull-left" style="padding-right: 5px;" >
+  <li ng-class="{active:link.isActive}"><a ng-href="/authin/{{link.name | lowercase}}" target="_self" >{{link.name}}</a></li>
 </div>
 <br><hr>
 <div id="content" class="clear">
-  <div class="main_page page" >
-    <div ng-repeat="article in dataList">
-      <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
-      <igram ng-if="article.type=='instagram'" igram="article"></igram>
-      <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>
+  <div ng-if="dataList[0] == undefined">
+    <h3>Click the links above to log in and view the latest tweets, instagrams, and youtube uploads you follow.</h3>
+  </div>
+  <div ng-if="dataList[0] != undefined">
+    <div class="page" ng-repeat="page in pageSet"> 
+
+      <div ng-if="page.name == 'Instagram'">
+        <div ng-class="page.position" >
+          <div ng-repeat="article in instagramList" 
+          class="dataContainer" 
+          ng-swipe-left="swipeLeft()" 
+          ng-swipe-right="swipeRight()">
+            <igram igram="article"></igram>
+          </div>
+        </div>
+      </div>
+
+      <div ng-if="page.name == 'Twitter'">
+        <div ng-class="page.position" >
+          <div ng-repeat="tweet in twitterList" 
+          class="dataContainer" 
+          ng-swipe-left="swipeLeft()" 
+          ng-swipe-right="swipeRight()">
+            <tweet tweet="tweet"></tweet>
+          </div>
+        </div>
+      </div>
+
+      <div ng-if="page.name == 'Youtube'">
+        <div ng-class="page.position" >
+          <div  ng-repeat="article in youtubeList" 
+          class="dataContainer" 
+          ng-swipe-left="swipeLeft()" 
+          ng-swipe-right="swipeRight()">
+            <ytube ytube="article"></ytube>
+          </div>
+        </div>
+      </div>
+
+      <div ng-if="page.name == 'Main'">
+        <div ng-class="page.position" >
+          <div ng-repeat="article in dataList" 
+          class="dataContainer" 
+          ng-swipe-left="swipeLeft()" 
+          ng-swipe-right="swipeRight()">
+            <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
+            <igram ng-if="article.type=='instagram'" igram="article"></igram>
+            <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="page">
-    <div  ng-repeat="tweet in twitterList">
-      <tweet tweet="tweet"></tweet>
-    </div>
-  </div>
-  <div class="page">
-    <div ng-repeat="article in youtubeListList">
-      <ytube ytube="article"></ytube>
-    </div>
-  </div>
-  <div class="page">
-    <div ng-repeat="article in instagramList">
-      <igram igram="article"></igram>
-    </div>
-  </div>
-  <br class="clear">
 </div>
