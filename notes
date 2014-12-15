@@ -35,9 +35,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 -5 feature: mobile touch controls
     -better header
     -swipeing controls:
-        in app wide controller called appCtrl.js
-            page counter and current page data objects
-        asyn load "pages" 
+        -asyn load "pages" 
         need swipe instructions
         
 -6 page length for covering data?
@@ -48,28 +46,25 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 todos:
     c-get youtube link
     c-get twitter user profile pic
-    c-twitter links and stuff filter
+    c-twitter links and stuff filterr
     c-make directives for styling different articles
     C-twitter handle link
     c-remove localstorage
     c-youtube description filter
     c-fix youtube date filter issue
-    -style templates
-        -need mobile home page
+    c-style templates
+        c-need mobile home page
         c-twitter
         c-youtube
         c-instagram
-            -need like icon
+            c-need like icon
         C-main tabs iphone4 fuck up
 
     -fix redirect issue
         -middleware could be culprit
     c-set up dev env, use express settigns?
-    -angular gesture directives
-    -remove tokens from localstorage
-        -need tokens, save to instance of userData object
     -make log out button
-    -.gitignore secrets
+    -c.gitignore secrets
     -research refresh tokens
 
     -pull to refresh feature
