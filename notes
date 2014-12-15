@@ -100,6 +100,8 @@ write tests:
     -e2e ??
 
 deployment procedure
+    -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py
+
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
 8ish. news rss feeds?
