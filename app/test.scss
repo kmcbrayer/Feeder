@@ -1,4 +1,12 @@
-// _reset.sass
+//code and pre background color
+$code-bkgnd-color: #444242 !important;
+$code-color: #FCFCFC !important;
+
+code,
+pre {
+  background-color: $code-bkgnd-color;
+  color: $code-color;
+}
 
 html,
 body,
@@ -6,4 +14,28 @@ ul,
 ol {
    margin: 0;
   padding: 0;
+}
+
+//layering the main page
+.layer {
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.first {
+  @extend .layer;
+  z-index: 4;
+}
+.second {
+  @extend .layer;
+  z-index: 3;
+}
+.third {
+  @extend .layer;
+  z-index: 2;
+}
+.fourth{
+  @extend .layer;
+  z-index: 1;
 }

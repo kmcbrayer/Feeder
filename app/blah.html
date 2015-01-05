@@ -1,0 +1,36 @@
+<h3>Sass for Grunt</h3>
+<p>
+  It was finally time to learn a CSS preprocessor. I had heard of SASS and LESS, and one of the top responses to a quick google search of "sass vs less" was a <a href="http://css-tricks.com/sass-vs-less/">css-tricks article</a> that favored SASS (but only slightly). 
+</p>
+<h4>Installation, aka: Why do I have to install Ruby?</h4>
+<p>
+  Its because the preprocessing is done by a ruby program. Its good that its pretty easy to install. Go grab an <a href="http://rubyinstaller.org/">installer</a> then open up a terminal and type out <code>gem install sass</code> (yes even in windows). You might get a strange error that says something about an SSL certificate. If so type <code>gem source -a "http://rubygems.org"</code> into the terminal. Its not recomended but its the only workaround besides reverting to an earlier version of ruby gems. 
+</p>
+<h4>Grunt configurations</h4>
+<p>
+  Its pretty easy to do this too. I love being plesantly surprised. <a href="https://github.com/gruntjs/grunt-contrib-sass">This</a> is where you'll find most of hte instructions. But I will outline the important stuff.
+</p>
+<ol>
+  <li>
+    In a terminal in your project folder type <code>npm install grunt-contrib-sass --save-dev</code>.
+  </li>
+  <li>
+    In your grunt file if you don't already have <code>require('load-grunt-tasks')(grunt);</code> (which adds all of the grunt-contrib-xxx modules), you will need to add <code>grunt.loadNpmTasks('grunt-contrib-sass');</code>
+  </li>
+  <li>
+    Make a new grunt task called sass like below.<br>
+    <pre><code>sass: {
+      dist: {
+        files: {
+          'path/to/main.css': 'path/to/main.scss'
+        }
+      }
+    }</code></pre> This is the simplest form of the grunt-contrib-sass preprocessor. It simply compiles everything in main.scss into the css file main.css. Dont worry if you see main.css.map get created too, its just all part of the processing.  
+  </li>
+  <li>
+    In your serve grunt task add <code>'sass',</code> and run <code>grunt serve</code> in a terminal. 
+  </li>
+</ol>
+<p>
+  For learning the exact sass syntax head over <a href="http://sass-lang.com/guide">here</a>. 
+</p>

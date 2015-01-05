@@ -1,8 +1,30 @@
+code,
+pre {
+  background-color: #444242 !important;
+  color: #FCFCFC !important; }
+
 html,
 body,
 ul,
 ol {
   margin: 0;
   padding: 0; }
+
+.layer, .first, .second, .third, .fourth {
+  position: relative;
+  top: 0;
+  left: 0; }
+
+.first {
+  z-index: 4; }
+
+.second {
+  z-index: 3; }
+
+.third {
+  z-index: 2; }
+
+.fourth {
+  z-index: 1; }
 
 /*# sourceMappingURL=test.css.map */
