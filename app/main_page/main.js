@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('MainCtrl', function ($scope, $http, $q) {
+  .controller('MainCtrl', function ($scope, $http, $q, pageSet) {
     var twitterList = [];
     var instagramList = [];
     var youtubeList = [];
@@ -38,28 +38,7 @@ angular.module('feederApp')
         return 0
       });
     });
-    $scope.pageSet = [
-      {
-        name: "Main",
-        isActive: true,
-        position: "first"
-      },
-      {
-        name: "Twitter",
-        isActive: false,
-        position: "second"
-      },
-      {
-        name: "Youtube",
-        isActive: false,
-        position: "third"
-      },
-      {
-        name: "Instagram",
-        isActive: false,
-        position: "fourth"
-      }
-    ];
+    $scope.pageSet = pageSet;
     $scope.active=0;
 
     $scope.swipeLeft = function() {
@@ -67,7 +46,6 @@ angular.module('feederApp')
       $scope.pageSet[$scope.active].isActive = false;
       
       $scope.pageSet.forEach(function(page) {
-        console.log(page)
         var pos = page.position;
         if (pos == "first") 
           page.position = "fourth"
@@ -91,7 +69,6 @@ angular.module('feederApp')
     $scope.swipeRight = function() {
       $scope.pageSet[$scope.active].isActive = false;
       $scope.pageSet.forEach(function(page) {
-        console.log(page)
         var pos = page.position;
         if (pos == "first") 
           page.position = "second"
@@ -109,6 +86,7 @@ angular.module('feederApp')
         $scope.active = 3;
       }
       $scope.pageSet[$scope.active].isActive = true;
+      // insert cool transitions?
     }
 
   });

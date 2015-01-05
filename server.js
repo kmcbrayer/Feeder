@@ -17,7 +17,7 @@ var app = express();
 
 // Express Configuration
 require('./lib/config/express')(app);
-//facebook auth config
+//Facebook auth config
 require('./lib/config/fb_login')(app,passport,store);
 // Twitter Auth Config
 require('./lib/config/twit_login')(app,passport,store);

@@ -63,12 +63,19 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+      sass: {
+        files: ['<%= yeoman.app %>/{,*//*}*.scss'],
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        }
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
       livereload: {
         files: [
-          '<%= yeoman.app %>/{,*//*}*.{html,jade,css,js}',
+          '<%= yeoman.app %>/{,*//*}*.{html,jade,css,js,scss}',
           '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
         ],
       
@@ -304,6 +311,14 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
+    //scss compilation
+    sass: {
+      dist: {
+        files: {
+          '<%= yeoman.app %>/test.css': '<%= yeoman.app %>/test.scss'
+        }
+      }
+    },
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
@@ -355,7 +370,7 @@ module.exports = function (grunt) {
       }
     }
   });
-
+  
   grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
     this.async();
   });
@@ -368,6 +383,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'bower-install',
+      'sass',
       'concurrent:server',
       'autoprefixer',
       'express:dev',
