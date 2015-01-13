@@ -5,29 +5,34 @@ describe('Controller: TwitterCtrl', function () {
   // load the controller's module
   beforeEach(module('feederApp'));
 
-  var TwitterCtrl,
+  var ctrlService,
+    TwitterCtrl,
     scope,
+    resp,
     $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_,$controller, $rootScope, MockUserService, twitterStatuses) {
+  beforeEach(inject(function (_$httpBackend_,$controller, $rootScope, twitterStatuses) {
     $httpBackend = _$httpBackend_;
-    
-    $httpBackend.when('GET', '/api/twitter/statuses')
-      .respond(
-        twitterStatuses
-      );
     scope = $rootScope.$new();
-    TwitterCtrl = $controller('TwitterCtrl', {
-      $scope: scope,
-      UserService: MockUserService
-    });
+    ctrlService = $controller;
+    resp = twitterStatuses;
   }));
 
   it('should attach the current user to the scope', function () {
-    expect(scope.user).not.toBe(null);
-    expect(scope.dataList).not.toBe(null);
+    //set up requests
+    $httpBackend.when('GET', '/api/twitter/statuses')
+      .respond(
+        resp
+      );
+    //ctrl init
+    TwitterCtrl = ctrlService('TwitterCtrl', {
+      $scope: scope
+    });
+    //gotta flush before data use
     $httpBackend.flush();
-    expect(scope.user.id).toBe(7);
+    //actual tests
+    expect(scope.dataList[0].type).toBe('twitter');
+    //do more tests
   });
 });
