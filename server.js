@@ -33,6 +33,8 @@ var api = require('./lib/controllers/api'),
     index = require('./lib/controllers');
 
 // Server Routes
+//utils
+app.get('/api/clear', api.clear(store));
 //reddit
 app.get('/api/redditAww', api.redditAww);
 //facebook
