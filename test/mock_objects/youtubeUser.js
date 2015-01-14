@@ -9,4 +9,4 @@ angular.module('feederApp')
       "picture" : "URL to photo"
     }
   }
-  )
+)

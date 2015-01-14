@@ -22,5 +22,6 @@ describe('Controller: InstagramCtrl', function() {
   it('should get instagram data and attach to the scope', function() {
     $httpBackend.flush();
     expect(scope.dataList[0].type).toBe('image');
+    expect(scope.dataList[0].id).toBe('791336301699919946_210318195');
   });
 });

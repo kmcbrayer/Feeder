@@ -1,34 +1,32 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('MainCtrl', function ($scope, $http, $q, pageSet) {
-    var twitterList = [];
-    var instagramList = [];
-    var youtubeList = [];
+  .controller('MainCtrl', function ($scope, $http, $q, pageSet, UserService) {
+    //update user service first thing:
+    UserService.updateTwitterInfo();
+    UserService.updateInstagramInfo();
+    UserService.updateYoutubeInfo();
+
     $scope.dataList = [];
-    //if the user is logged in get feed
     $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {
-        twitterList = data;
-        $scope.twitterList = twitterList;
+        $scope.twitterList = data;
       }),
       $http.get('/api/instagram/feed').success(function(feed) {
-        instagramList = feed;
-        $scope.instagramList = instagramList;
+        $scope.instagramList = feed;
       }),
       $http.get('/api/youtube/subscriptions').success(function(subs) {
-        youtubeList = subs;
-        $scope.youtubeList = youtubeList;
+        $scope.youtubeList = subs;
       })
     ]).then(function() {
-      if (twitterList !== []) {
-        $scope.dataList = $scope.dataList.concat(twitterList);
+      if ($scope.twitterList !== null) {
+        $scope.dataList = $scope.dataList.concat($scope.twitterList);
       }
-      if (instagramList !== []) {
-        $scope.dataList = $scope.dataList.concat(instagramList);
+      if ($scope.instagramList !== null) {
+        $scope.dataList = $scope.dataList.concat($scope.instagramList);
       }
-      if (youtubeList !== []) {
-        $scope.dataList = $scope.dataList.concat(youtubeList);
+      if ($scope.youtubeList !== null) {
+        $scope.dataList = $scope.dataList.concat($scope.youtubeList);
       }
       $scope.dataList = $scope.dataList.sort(function(a, b) {
         if(a.date > b.date)
@@ -38,6 +36,7 @@ angular.module('feederApp')
         return 0
       });
     });
+    //page locations and init
     $scope.pageSet = pageSet;
     $scope.active=0;
 

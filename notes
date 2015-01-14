@@ -1,11 +1,11 @@
-1. setup app
+c-1. setup app
     c-make sure express is working correctly
     c-edit index.html
     c-remove fullstack bloat
     c-later-add main file html/css
         *bootstrapped it :(
 
-2. set up sign ins
+c-2. set up sign ins
     c-twitter
         C-get user timelines from twitter api(look into twit module)
         C-in /twitter do an "if (!user) show login"
@@ -42,6 +42,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 -7 if logged in buttons set active and positions(act like links)?
 -8 if no youtube links return popular links
     -let user know with bar at the top of the page with X button
+-9 Write E2E tests
 
 todos:
     c-get youtube link
@@ -52,6 +53,7 @@ todos:
     c-remove localstorage
     c-youtube description filter
     c-fix youtube date filter issue
+    c-add Sass
     c-style templates
         c-need mobile home page
         c-twitter
@@ -63,7 +65,7 @@ todos:
     -fix redirect issue
         -middleware could be culprit
     c-set up dev env, use express settigns?
-    -make log out button
+    -make clear/logout button
     -c.gitignore secrets
     -research refresh tokens
 
@@ -81,23 +83,9 @@ todos:
                 dataList = data;
             });
         }
-    -concat CSS
+    -concat CSS/Sass
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page
-
-6.
-
-write tests:
-    c-mock objects
-    -mock services
-        handeled case for: 
-            -is logged in, return correct user
-        need case for:
-            -not logged in, return null user
-    -directives
-        ng-show
-        filters
-    -e2e ??
 
 deployment procedure
     -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py
@@ -127,3 +115,18 @@ settings gear:
 
 google developer console:
 https://console.developers.google.com/project
+
+
+log in flow:
+user clickes twitter button
+becomes logged in on the backend
+    saving userdata in localStore('twit_data')
+on page reload call all feed services
+if user logged in on backend feeds will populate on frontend
+
+
+flow I want:
+user clicks twitter button
+user data saved on backend
+redirect forces page reload
+update frontend user data

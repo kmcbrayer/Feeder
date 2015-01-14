@@ -1,0 +1,24 @@
+States:
+1. initial/main page:
+  a. user not logged in
+    show instructions
+  b. user logged in
+    show feeds
+
+2. Feeds logged in:
+  a. if twitter:
+      show twitter feeds
+  b. if ig:
+      show ig feeds
+  c. if yt:
+      show yt feeds
+
+3. Clear:
+  a. before click:
+    we have localStore user data
+  b. after click:
+    we dont have localStore user data
+
+
+logged in case:
+start - not logged in means no backend user data, no token(except twitter), and no feed data
