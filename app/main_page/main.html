@@ -28,9 +28,7 @@
       <div ng-if="page.name == 'Twitter'">
         <div ng-class="page.position" >
           <div ng-repeat="tweet in twitterList" 
-          class="dataContainer" 
-          ng-swipe-left="swipeLeft()" 
-          ng-swipe-right="swipeRight()">
+          class="dataContainer">
             <tweet tweet="tweet"></tweet>
           </div>
         </div>
@@ -39,20 +37,16 @@
       <div ng-if="page.name == 'Youtube'">
         <div ng-class="page.position" >
           <div  ng-repeat="article in youtubeList" 
-          class="dataContainer" 
-          ng-swipe-left="swipeLeft()" 
-          ng-swipe-right="swipeRight()">
+          class="dataContainer">
             <ytube ytube="article"></ytube>
           </div>
         </div>
       </div>
 
       <div ng-if="page.name == 'Main'">
-        <div ng-class="page.position" >
+        <div touch-slide-controller ng-class="page.position" >
           <div ng-repeat="article in dataList" 
-          class="dataContainer"
-          ng-swipe-left="swipeLeft()" 
-          ng-swipe-right="swipeRight()">
+          class="dataContainer">
             <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
             <igram ng-if="article.type=='instagram'" igram="article"></igram>
             <ytube ng-if="article.type=='youtube'" ytube="article"></ytube>

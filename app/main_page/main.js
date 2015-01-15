@@ -37,9 +37,10 @@ angular.module('feederApp')
       });
     });
     //page locations and init
+    
     $scope.pageSet = pageSet;
     $scope.active=0;
-
+    /*
     $scope.swipeLeft = function() {
       //active tab controls
       $scope.pageSet[$scope.active].isActive = false;
@@ -55,8 +56,8 @@ angular.module('feederApp')
         if (pos == "fourth") 
           page.position = "third"
       });
+      
       $scope.active++;
-
       if ($scope.active > 3) {
         $scope.active=0;
       }
@@ -87,5 +88,6 @@ angular.module('feederApp')
       $scope.pageSet[$scope.active].isActive = true;
       // insert cool transitions?
     }
+    */
 
   });

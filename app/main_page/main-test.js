@@ -45,7 +45,7 @@ describe('Controller: MainCtrl', function () {
   });
 
   it('should change the pages z-index(position) onSwipe', function () {
-    //test control data
+    //control data
     expect(pSet[0].name).toBe('Main');
     expect(pSet[0].position).toBe('first');
     expect(pSet[3].name).toBe('Instagram');
