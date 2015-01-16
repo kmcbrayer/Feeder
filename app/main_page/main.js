@@ -6,26 +6,34 @@ angular.module('feederApp')
     UserService.updateTwitterInfo();
     UserService.updateInstagramInfo();
     UserService.updateYoutubeInfo();
+    var twitterList, youtubeList, instagramList = [];
 
     $scope.dataList = [];
     $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {
-        $scope.twitterList = data;
+        twitterList = data;
+        $scope.twitterList = twitterList;
+        console.log('twitterlist complete')
       }),
       $http.get('/api/instagram/feed').success(function(feed) {
-        $scope.instagramList = feed;
+        instagramList = feed;
+        $scope.instagramList = instagramList;
+        console.log('instagramlist complete')
       }),
       $http.get('/api/youtube/subscriptions').success(function(subs) {
-        $scope.youtubeList = subs;
+        youtubeList = subs;
+        $scope.youtubeList = youtubeList;
+        console.log('youtubelist complete')
       })
     ]).then(function() {
-      if ($scope.twitterList !== null) {
+      console.log('sup?')
+      if (twitterList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.twitterList);
       }
-      if ($scope.instagramList !== null) {
+      if (instagramList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.instagramList);
       }
-      if ($scope.youtubeList !== null) {
+      if (youtubeList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.youtubeList);
       }
       $scope.dataList = $scope.dataList.sort(function(a, b) {
