@@ -33,16 +33,19 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
     c-display correct data per article
     
 -5 feature: mobile touch controls
-    -better header
-    -swipeing controls:
-        -asyn load "pages" 
+    c-better header
+    c-swipeing controls:
+        c-asyn load "pages" 
         need swipe instructions
-        
--6 page length for covering data?
--7 if logged in buttons set active and positions(act like links)?
--8 if no youtube links return popular links
+
+-6 make clear/logout button
+-7 concat angular/Sass/css with grunt
+-8 better sort algorythm for        
+-9 page length for covering data?
+-10 if logged in buttons set active and positions(act like links)?
+-11 if no youtube links return popular links
     -let user know with bar at the top of the page with X button
--9 Write E2E tests
+-12 Write E2E tests??
 
 todos:
     c-get youtube link
@@ -61,11 +64,7 @@ todos:
         c-instagram
             c-need like icon
         C-main tabs iphone4 fuck up
-
-    -fix redirect issue
-        -middleware could be culprit
-    c-set up dev env, use express settigns?
-    -make clear/logout button
+    c-set up dev env, use express settigns
     -c.gitignore secrets
     -research refresh tokens
 
@@ -83,7 +82,6 @@ todos:
                 dataList = data;
             });
         }
-    -concat CSS/Sass
     -checkboxes for adding and removing feeds
     -better sort alorithm for chrono page
 

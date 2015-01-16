@@ -4,11 +4,13 @@
 var express = require('express');
 var passport = require('passport');
 var Storage = require('dom-storage');
+var log = require('./lib/config/winston');
 var twitAPI = require('./lib/controllers/twitterApi');
 var fbAPI = require('./lib/controllers/facebookApi');
 var ytAPI = require('./lib/controllers/youtubeApi');
 var igAPI = require('./lib/controllers/instagramApi');
 
+log.info("start app")
 // Setup session storage
 var store = new Storage(null, {strict:true});
 

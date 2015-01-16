@@ -1,0 +1,79 @@
+2015-01-16T19:01:41.162Z - info: whats up buttface?
+2015-01-16T19:03:29.049Z - info: whats up buttface?
+2015-01-16T19:03:48.419Z - info: whats up buttface?
+2015-01-16T19:04:49.145Z - info: whats up buttface?
+2015-01-16T19:05:09.888Z - info: user logged into twitter
+2015-01-16T19:05:09.889Z - info: auth success, redirect back to main page
+2015-01-16T19:05:33.057Z - info: whats up buttface?
+2015-01-16T19:07:56.113Z - info: whats up buttface?
+2015-01-16T19:08:01.810Z - info: whats up buttface?
+2015-01-16T19:08:02.764Z - info: did not hit twitter_cache
+2015-01-16T19:08:31.192Z - info: whats up buttface?
+2015-01-16T19:08:34.461Z - info: did not hit twitter_cache
+2015-01-16T19:08:58.497Z - info: start app
+2015-01-16T19:09:00.348Z - info: did not hit twitter_cache
+2015-01-16T19:10:39.067Z - info: start app
+2015-01-16T19:10:40.017Z - info: twitter user not logged in
+2015-01-16T19:10:40.029Z - info: did not hit twitter_cache
+2015-01-16T19:11:07.545Z - info: start app
+2015-01-16T19:11:08.510Z - info: twitter user not logged in
+2015-01-16T19:11:08.519Z - info: did not hit twitter_cache
+2015-01-16T19:13:08.517Z - info: did not hit twitter_cache
+2015-01-16T19:13:29.635Z - info: start app
+2015-01-16T19:13:30.517Z - info: twitter user not logged in
+2015-01-16T19:13:30.525Z - info: did not hit twitter_cache
+2015-01-16T19:15:30.521Z - info: did not hit twitter_cache
+2015-01-16T19:15:39.187Z - info: start app
+2015-01-16T19:15:40.084Z - info: twitter user not logged in
+2015-01-16T19:15:40.098Z - info: did not hit twitter_cache
+2015-01-16T19:15:40.106Z - info: did not hit instagram_cache
+2015-01-16T19:15:40.435Z - info: error getting instagram data, Error: OAuthParameterException
+2015-01-16T19:17:40.097Z - info: did not hit twitter_cache
+2015-01-16T19:19:07.232Z - info: start app
+2015-01-16T19:19:08.119Z - info: twitter user not logged in
+2015-01-16T19:19:08.131Z - info: did not hit twitter_cache
+2015-01-16T19:19:08.132Z - info: did not hit instagram_cache
+2015-01-16T19:20:07.089Z - info: start app
+2015-01-16T19:20:08.061Z - info: twitter user not logged in
+2015-01-16T19:20:08.077Z - info: did not hit twitter_cache
+2015-01-16T19:20:08.079Z - info: did not hit instagram_cache
+2015-01-16T19:20:08.108Z - info: did not hit youtube_cache
+2015-01-16T19:22:08.086Z - info: did not hit twitter_cache
+2015-01-16T19:22:08.126Z - info: did not hit youtube_cache
+2015-01-16T19:22:16.513Z - info: start app
+2015-01-16T19:22:17.447Z - info: twitter user not logged in
+2015-01-16T19:22:17.462Z - info: nothing in 'twitter_cache'
+2015-01-16T19:22:17.463Z - info: did not hit instagram_cache
+2015-01-16T19:22:17.482Z - info: did not hit youtube_cache
+2015-01-16T19:24:17.468Z - info: nothing in 'twitter_cache'
+2015-01-16T19:24:17.468Z - info: did not hit youtube_cache
+2015-01-16T19:26:17.486Z - info: nothing in 'twitter_cache'
+2015-01-16T19:26:17.487Z - info: did not hit youtube_cache
+2015-01-16T19:26:35.254Z - info: start app
+2015-01-16T19:26:36.152Z - info: twitter user not logged in
+2015-01-16T19:26:36.167Z - info: did not hit instagram_cache
+2015-01-16T19:26:36.183Z - info: did not hit youtube_cache
+2015-01-16T19:28:36.178Z - info: did not hit youtube_cache
+2015-01-16T19:30:36.189Z - info: did not hit youtube_cache
+2015-01-16T19:31:09.011Z - info: start app
+2015-01-16T19:31:11.199Z - info: twitter user not logged in
+2015-01-16T19:31:11.210Z - info: did not hit instagram_cache
+2015-01-16T19:31:11.235Z - info: did not hit youtube_cache
+2015-01-16T19:32:00.472Z - info: start app
+2015-01-16T19:32:01.730Z - info: twitter user not logged in
+2015-01-16T19:32:01.746Z - info: did not hit instagram_cache
+2015-01-16T19:32:01.774Z - info: did not hit youtube_cache
+2015-01-16T19:33:12.278Z - info: start app
+2015-01-16T19:33:13.444Z - info: twitter user not logged in
+2015-01-16T19:33:13.457Z - info: did not hit instagram_cache
+2015-01-16T19:33:13.482Z - info: did not hit youtube_cache
+2015-01-16T19:34:00.039Z - info: start app
+2015-01-16T19:34:01.195Z - info: twitter user not logged in
+2015-01-16T19:34:01.213Z - info: did not hit instagram_cache
+2015-01-16T19:34:01.240Z - info: did not hit youtube_cache
+2015-01-16T19:36:01.222Z - info: did not hit youtube_cache
+2015-01-16T19:36:01.223Z - info: did not hit instagram_cache
+2015-01-16T19:36:46.411Z - info: start app
+2015-01-16T19:36:47.612Z - info: twitter user not logged in
+2015-01-16T19:36:47.645Z - info: did not hit instagram_cache
+2015-01-16T19:36:47.667Z - info: did not hit youtube_cache

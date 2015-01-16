@@ -13,6 +13,7 @@ angular.module('feederApp')
 
     userData.updateTwitterInfo = function() {
       $http.get('/api/twitter/currentUser').success(function(user) {
+        console.log(user)
         twitData = {
           isLoggedIn :  true,
           userName :    user._json.screen_name,
