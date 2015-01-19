@@ -39,7 +39,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
         need swipe instructions
 
 -6 make clear/logout button
-c kinda-7 concat angular/Sass/css with grunt
+c-7 concat angular with grunt
 -8 better sort algorythm for mainpage       
 -9 page length for covering data?
 -10 if logged in buttons set active and positions(act like links)?

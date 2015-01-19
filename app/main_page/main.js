@@ -39,6 +39,7 @@ angular.module('feederApp')
           return 1;
         return 0
       });
+      console.log($scope.dataList)
     });
     //page locations and init
     

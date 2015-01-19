@@ -6,10 +6,10 @@
 </div>
 <br><hr>
 <div id="content" class="clear">
-  <div class="test_content" ng-if="dataList[0] == undefined">
+  <div class="test_content" ng-if="dataList[0]">
     <h3>Click the links above to log in and view the latest tweets, instagrams, and youtube uploads you follow.</h3>
   </div>
-  <div ng-if="dataList[0] != undefined">
+  <div>
     <div class="page" ng-repeat="page in pageSet"> 
 
       <div ng-if="page.name == 'Instagram'">

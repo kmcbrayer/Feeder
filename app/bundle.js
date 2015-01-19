@@ -100,20 +100,16 @@ angular.module('feederApp')
       $http.get('/api/twitter/statuses').success(function(data) {
         twitterList = data;
         $scope.twitterList = twitterList;
-        console.log('twitterlist complete')
       }),
       $http.get('/api/instagram/feed').success(function(feed) {
         instagramList = feed;
         $scope.instagramList = instagramList;
-        console.log('instagramlist complete')
       }),
       $http.get('/api/youtube/subscriptions').success(function(subs) {
         youtubeList = subs;
         $scope.youtubeList = youtubeList;
-        console.log('youtubelist complete')
       })
     ]).then(function() {
-      console.log('sup?')
       if (twitterList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.twitterList);
       }
