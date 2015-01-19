@@ -39,8 +39,8 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
         need swipe instructions
 
 -6 make clear/logout button
--7 concat angular/Sass/css with grunt
--8 better sort algorythm for        
+c kinda-7 concat angular/Sass/css with grunt
+-8 better sort algorythm for mainpage       
 -9 page length for covering data?
 -10 if logged in buttons set active and positions(act like links)?
 -11 if no youtube links return popular links
@@ -65,7 +65,7 @@ todos:
             c-need like icon
         C-main tabs iphone4 fuck up
     c-set up dev env, use express settigns
-    -c.gitignore secrets
+    c-.gitignore secrets
     -research refresh tokens
 
     -pull to refresh feature

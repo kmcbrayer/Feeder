@@ -237,19 +237,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Allow the use of non-minsafe AngularJS files. Automatically makes it
-    // minsafe compatible so Uglify does not destroy the ng references
-    ngmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
-      }
-    },
-
     // Replace Google CDN references
     cdnify: {
       dist: {
@@ -311,6 +298,18 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
+    //concat all the js
+    concat: {
+      options: {
+        seperator: ';',
+      },
+      dist: {
+        src: ['app/routes_settings/*.js', 'app/filters/*.js', 'app/instagram/*.js', 'app/main_page/*.js', 
+              'app/navbar/*.js', 'app/settings/*.js', 'app/twitter/*.js', 'app/youtube/*.js'],//must load routes_settings first
+        dest: '<%= yeoman.app %>/bundle.js'
+      }
+    },
+
     //scss compilation
     sass: {
       dist: {
@@ -384,6 +383,7 @@ module.exports = function (grunt) {
       'clean:server',
       'bower-install',
       'sass',
+      'concat',
       'concurrent:server',
       'autoprefixer',
       'express:dev',
