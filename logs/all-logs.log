@@ -873,3 +873,48 @@
 2015-01-20T18:30:18.849Z - info: not logged in
 2015-01-20T18:30:18.851Z - info: did not hit youtube_cache
 2015-01-20T18:30:18.851Z - info: not logged in
+2015-01-20T20:26:59.352Z - info: start app
+2015-01-20T20:27:00.887Z - info: twitter user not logged in
+2015-01-20T20:27:00.892Z - info: instagram user not logged in
+2015-01-20T20:27:00.894Z - info: youtube user not logged in
+2015-01-20T20:27:00.901Z - info: did not hit 'twitter_cache' 
+2015-01-20T20:27:00.903Z - info: did not hit instagram_cache
+2015-01-20T20:27:00.903Z - info: not logged in
+2015-01-20T20:27:00.906Z - info: did not hit youtube_cache
+2015-01-20T20:27:00.906Z - info: not logged in
+2015-01-20T20:27:10.962Z - info: user logged into twitter, and data set
+2015-01-20T20:27:10.963Z - info: auth success, redirect back to main page
+2015-01-20T20:27:11.501Z - info: twitter user logged in
+2015-01-20T20:27:11.504Z - info: instagram user not logged in
+2015-01-20T20:27:11.506Z - info: youtube user not logged in
+2015-01-20T20:27:11.516Z - info: did not hit 'twitter_cache' 
+2015-01-20T20:27:11.522Z - info: did not hit instagram_cache
+2015-01-20T20:27:11.522Z - info: not logged in
+2015-01-20T20:27:11.525Z - info: did not hit youtube_cache
+2015-01-20T20:27:11.525Z - info: not logged in
+2015-01-20T20:27:56.800Z - info: twitter user logged in
+2015-01-20T20:27:56.803Z - info: instagram user not logged in
+2015-01-20T20:27:56.804Z - info: youtube user not logged in
+2015-01-20T20:27:56.830Z - info: did not hit instagram_cache
+2015-01-20T20:27:56.830Z - info: not logged in
+2015-01-20T20:27:56.836Z - info: did not hit youtube_cache
+2015-01-20T20:37:10.998Z - info: twitter user logged in
+2015-01-20T20:37:11.001Z - info: instagram user not logged in
+2015-01-20T20:37:11.003Z - info: youtube user not logged in
+2015-01-20T20:37:11.017Z - info: did not hit instagram_cache
+2015-01-20T20:37:11.017Z - info: not logged in
+2015-01-20T20:38:02.073Z - info: twitter user logged in
+2015-01-20T20:38:02.075Z - info: youtube user not logged in
+2015-01-20T20:38:02.078Z - info: instagram user not logged in
+2015-01-20T20:38:02.098Z - info: did not hit instagram_cache
+2015-01-20T20:38:02.098Z - info: not logged in
+2015-01-20T20:38:33.144Z - info: twitter user logged in
+2015-01-20T20:38:33.149Z - info: instagram user not logged in
+2015-01-20T20:38:33.151Z - info: youtube user not logged in
+2015-01-20T20:38:33.160Z - info: did not hit instagram_cache
+2015-01-20T20:38:33.160Z - info: not logged in
+2015-01-20T20:39:08.559Z - info: twitter user logged in
+2015-01-20T20:39:08.560Z - info: instagram user not logged in
+2015-01-20T20:39:08.561Z - info: youtube user not logged in
+2015-01-20T20:39:08.577Z - info: did not hit instagram_cache
+2015-01-20T20:39:08.577Z - info: not logged in

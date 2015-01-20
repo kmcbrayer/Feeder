@@ -38,14 +38,15 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
         c-asyn load "pages" 
         need swipe instructions
 
--6 make clear/logout button
+c-6 make clear/logout button
 c-7 concat angular with grunt
--8 better sort algorythm for mainpage       
--9 page length for covering data?
--10 if logged in buttons set active and positions(act like links)?
--11 if no youtube links return popular links
+-8 page length for covering data?
+-9 if logged in buttons set active and positions(act like links)?
+-10 if no youtube links return popular links
     -let user know with bar at the top of the page with X button
--12 Write E2E tests??
+-11 Write E2E tests
+    clear and logged in stuff:
+        see states_tests.txt
 
 todos:
     c-get youtube link
@@ -66,6 +67,7 @@ todos:
         C-main tabs iphone4 fuck up
     c-set up dev env, use express settigns
     c-.gitignore secrets
+    -better sort algorythm for mainpage
     -research refresh tokens
 
     -pull to refresh feature

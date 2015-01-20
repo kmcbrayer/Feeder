@@ -19,7 +19,6 @@ angular.module('feederApp')
           displayName : user.displayName,
           photoUrl :    user.photos[0].value
         };
-        console.log('all store: '+user)
         userData.twitData = twitData;//set if success
       });
       return userData.twitData;//return {} if not success
