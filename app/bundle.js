@@ -77,6 +77,33 @@ angular.module('feederApp')
     }
   }
 })
+'use strict'; 
+
+describe('Controller: InstagramCtrl', function() {
+  beforeEach(module('feederApp'));
+  var InstagramCtrl,
+    scope,
+    $httpBackend;
+
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope, instagramFeed) {
+    $httpBackend = _$httpBackend_;
+
+    $httpBackend.when('GET', '/api/instagram/feed')
+      .respond(
+        instagramFeed
+      );
+    scope = $rootScope.$new();
+    InstagramCtrl = $controller('InstagramCtrl', {
+      $scope: scope
+    });
+  }));
+
+  it('should get instagram data and attach to the scope', function() {
+    $httpBackend.flush();
+    expect(scope.dataList[0].type).toBe('image');
+    expect(scope.dataList[0].id).toBe('791336301699919946_210318195');
+  });
+});
 'use strict';
 
 angular.module('feederApp')
@@ -85,6 +112,73 @@ angular.module('feederApp')
         $scope.dataList = data;
     });
   });
+'use strict';
+
+describe('Controller: MainCtrl', function () {
+
+  // load the controller's module
+  beforeEach(module('feederApp'));
+  console.log('----------------------------------------')
+  var MainCtrl,
+    scope,
+    pSet,
+    $httpBackend;
+
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope,
+                              twitterUser,twitterStatuses,instagramFeed,youtubeSubs,pageSet ) {
+    $httpBackend = _$httpBackend_;
+    scope = $rootScope.$new();
+    pSet = pageSet;
+
+    //do backend mocking
+    $httpBackend.when('GET', '/api/twitter/statuses')
+      .respond(
+        twitterStatuses
+      );
+    $httpBackend.when('GET', '/api/instagram/feed')
+      .respond(
+        instagramFeed
+      );
+    $httpBackend.when('GET', '/api/youtube/subscriptions')
+      .respond(
+        youtubeSubs
+      );
+    //init controller
+    MainCtrl = $controller('MainCtrl', {
+      $scope: scope
+    });
+  }));
+  
+  it('should attach the current user to the scope', function () {
+    $httpBackend.flush();
+    expect(scope.twitterList[0].type).toBe('twitter');
+    expect(scope.instagramList).not.toBe(null);
+    expect(scope.youtubeList).not.toBe(null);
+    
+  });
+
+  it('should change the pages z-index(position) onSwipe', function () {
+    //control data
+    expect(pSet[0].name).toBe('Main');
+    expect(pSet[0].position).toBe('first');
+    expect(pSet[3].name).toBe('Instagram');
+    expect(pSet[3].position).toBe('fourth');
+    //test swipe left
+    scope.swipeLeft();
+    expect(pSet[0].name).toBe('Main');
+    expect(pSet[0].position).toBe('fourth');
+    expect(pSet[3].name).toBe('Instagram');
+    expect(pSet[3].position).toBe('third');
+    //test swipe right
+    scope.swipeRight();
+    expect(pSet[0].name).toBe('Main');
+    expect(pSet[0].position).toBe('first');
+    expect(pSet[3].name).toBe('Instagram');
+    expect(pSet[3].position).toBe('fourth');
+  });
+});
+
 'use strict';
 
 angular.module('feederApp')
@@ -126,7 +220,6 @@ angular.module('feederApp')
           return 1;
         return 0
       });
-      console.log($scope.dataList)
     });
     //page locations and init
     
@@ -261,6 +354,41 @@ angular.module('feederApp')
 })
 'use strict';
 
+describe('Controller: TwitterCtrl', function () {
+
+  // load the controller's module
+  beforeEach(module('feederApp'));
+
+  var TwitterCtrl,
+    scope,
+    $httpBackend;
+
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function (_$httpBackend_,$controller, $rootScope, twitterStatuses) {
+    $httpBackend = _$httpBackend_;
+    scope = $rootScope.$new();
+    //set up requests
+    $httpBackend.when('GET', '/api/twitter/statuses')
+      .respond(
+        twitterStatuses
+      );
+    //ctrl init
+    TwitterCtrl = $controller('TwitterCtrl', {
+      $scope: scope
+    });
+  }));
+
+  it('should attach the current user to the scope', function () {
+    //gotta flush before data use
+    $httpBackend.flush();
+    //actual tests
+    expect(scope.dataList[0].type).toBe('twitter');
+    //do more tests
+  });
+});
+
+'use strict';
+
 /**
  * @ngdoc function
  * @name feederApp.controller:TwitterCtrl
@@ -287,6 +415,33 @@ angular.module('feederApp')
     }
   }
 })
+'use strict'; 
+
+describe('Controller: YoutubeCtrl', function() {
+  beforeEach(module('feederApp'));
+  var YoutubeCtrl,
+    scope,
+    $httpBackend;
+
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope, youtubeSubs) {
+    $httpBackend = _$httpBackend_;
+
+    $httpBackend.when('GET', '/api/youtube/subscriptions')
+      .respond(
+        youtubeSubs
+      );
+    scope = $rootScope.$new();
+    YoutubeCtrl = $controller('YoutubeCtrl', {
+      $scope: scope
+    });
+  }));
+
+  it('should attach a user to the scope', function() {
+    $httpBackend.flush();
+    expect(scope.dataList[0].type).toBe("youtube");
+    expect(scope.dataList[0].videoId).toBe(777);
+  });
+});
 'use strict';
 
 angular.module('feederApp')
