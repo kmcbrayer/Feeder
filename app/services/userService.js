@@ -7,9 +7,9 @@ angular.module('feederApp')
       igData: {isLoggedIn :  false},
       ytData: {isLoggedIn :  false},
     };
-    var twitData = {};
-    var igData = {};
-    var ytData = {};
+    var twitData = {isLoggedIn :  false};
+    var igData = {isLoggedIn :  false};
+    var ytData = {isLoggedIn :  false};
 
     userData.updateTwitterInfo = function() {
       $http.get('/api/twitter/currentUser').success(function(user) {
@@ -19,6 +19,7 @@ angular.module('feederApp')
           displayName : user.displayName,
           photoUrl :    user.photos[0].value
         };
+        console.log('all store: '+user)
         userData.twitData = twitData;//set if success
       });
       return userData.twitData;//return {} if not success

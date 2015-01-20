@@ -126,6 +126,7 @@ angular.module('feederApp')
           return 1;
         return 0
       });
+      console.log($scope.dataList)
     });
     //page locations and init
     
@@ -193,12 +194,11 @@ angular.module('feederApp')
         var startx, delta;
         $swipe.bind(ele, {
           'start': function(coords) {
-            console.log('got me')
             startx = coords.x;
           },
           'move': function(coords) {
             delta = coords.x - startx;
-            console.log(ele);
+            //console.log(ele);
             //start timer
             //slow move: activate pageTurn when position is x = 100?px from edge
               //if left edge pageTurnLeft:
