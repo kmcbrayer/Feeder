@@ -40,6 +40,7 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 
 c-6 make clear/logout button
 c-7 concat angular with grunt
+-TODO: better css for navbar
 -8 page length for covering data?
 -9 if logged in buttons set active and positions(act like links)?
 -10 if no youtube links return popular links
