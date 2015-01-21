@@ -1,8 +1,6 @@
 'use strict';
 
 describe('Controller: MainCtrl', function () {
-
-  // load the controller's module
   beforeEach(module('feederApp'));
   console.log('----------------------------------------')
   var MainCtrl,
@@ -18,6 +16,44 @@ describe('Controller: MainCtrl', function () {
     pSet = pageSet;
 
     //do backend mocking
+    //mock user data
+    $httpBackend.when('GET', '/api/twitter/currentUser')
+      .respond(
+        {
+          _json: {
+            screen_name : 'Kmac'
+          },
+          displayName : 'Kevin McBrayer',
+          photos : [
+            {
+              value : 'http://URL.com'
+            }
+          ]
+        }
+      );
+      $httpBackend.when('GET', '/api/instagram/currentUser')
+      .respond(
+        {
+          username: 'Kmac',
+          displayName: 'Kevin McBrayer',
+          _json : {
+            data : {
+              profile_picture : 'http://URL.com'
+            }
+          }
+        }
+      );
+      $httpBackend.when('GET', '/api/youtube/currentUser')
+      .respond(
+        {
+          _json : {
+            screen_name : 'Kmac',
+            name : 'Kevin McBrayer',
+            picture : 'http://URL.com'
+          }
+        }
+      );
+    //mock feed data
     $httpBackend.when('GET', '/api/twitter/statuses')
       .respond(
         twitterStatuses
@@ -42,25 +78,5 @@ describe('Controller: MainCtrl', function () {
     expect(scope.instagramList).not.toBe(null);
     expect(scope.youtubeList).not.toBe(null);
     
-  });
-
-  it('should change the pages z-index(position) onSwipe', function () {
-    //control data
-    expect(pSet[0].name).toBe('Main');
-    expect(pSet[0].position).toBe('first');
-    expect(pSet[3].name).toBe('Instagram');
-    expect(pSet[3].position).toBe('fourth');
-    //test swipe left
-    scope.swipeLeft();
-    expect(pSet[0].name).toBe('Main');
-    expect(pSet[0].position).toBe('fourth');
-    expect(pSet[3].name).toBe('Instagram');
-    expect(pSet[3].position).toBe('third');
-    //test swipe right
-    scope.swipeRight();
-    expect(pSet[0].name).toBe('Main');
-    expect(pSet[0].position).toBe('first');
-    expect(pSet[3].name).toBe('Instagram');
-    expect(pSet[3].position).toBe('fourth');
   });
 });

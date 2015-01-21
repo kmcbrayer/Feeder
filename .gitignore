@@ -1,7 +1,5 @@
 node_modules
-public
 .tmp
 .sass-cache
 bower/bower_components
-heroku
 logs

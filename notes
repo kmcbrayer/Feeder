@@ -64,7 +64,7 @@ todos:
         c-youtube
         c-instagram
             c-need like icon
-        C-main tabs iphone4 fuck up
+        c-main tabs iphone4 fuck up
     c-set up dev env, use express settigns
     c-.gitignore secrets
     -better sort algorythm for mainpage
@@ -92,7 +92,6 @@ deployment procedure
 
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
-8ish. news rss feeds?
 
 
 **other goals

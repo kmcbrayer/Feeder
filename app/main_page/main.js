@@ -7,7 +7,7 @@ angular.module('feederApp')
     UserService.updateInstagramInfo();
     UserService.updateYoutubeInfo();
     var twitterList, youtubeList, instagramList = [];
-
+    $scope.user = UserService;
     $scope.dataList = [];
     $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {
@@ -40,58 +40,9 @@ angular.module('feederApp')
         return 0
       });
     });
+    console.log($scope.user)
+
     //page locations and init
-    
     $scope.pageSet = pageSet;
     $scope.active=0;
-    /*
-    $scope.swipeLeft = function() {
-      //active tab controls
-      $scope.pageSet[$scope.active].isActive = false;
-      
-      $scope.pageSet.forEach(function(page) {
-        var pos = page.position;
-        if (pos == "first") 
-          page.position = "fourth"
-        if (pos == "second") 
-          page.position = "first"
-        if (pos == "third") 
-          page.position = "second"
-        if (pos == "fourth") 
-          page.position = "third"
-      });
-      
-      $scope.active++;
-      if ($scope.active > 3) {
-        $scope.active=0;
-      }
-      $scope.pageSet[$scope.active].isActive = true;
-      // insert cool transitions? 
-
-    };
-
-    $scope.swipeRight = function() {
-      $scope.pageSet[$scope.active].isActive = false;
-      $scope.pageSet.forEach(function(page) {
-        var pos = page.position;
-        if (pos == "first") 
-          page.position = "second"
-        if (pos == "second") 
-          page.position = "third"
-        if (pos == "third") 
-          page.position = "fourth"
-        if (pos == "fourth") 
-          page.position = "first"
-      });
-
-      $scope.active--;
-
-      if ($scope.active <0) {
-        $scope.active = 3;
-      }
-      $scope.pageSet[$scope.active].isActive = true;
-      // insert cool transitions?
-    }
-    */
-
   });

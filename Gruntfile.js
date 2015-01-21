@@ -383,7 +383,6 @@ module.exports = function (grunt) {
       'clean:server',
       'bower-install',
       'sass',
-      'concat',
       'concurrent:server',
       'autoprefixer',
       'express:dev',
