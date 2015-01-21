@@ -32,6 +32,7 @@ angular.module('feederApp')
       if (youtubeList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.youtubeList);
       }
+      //TODO: better sorting algorythm
       $scope.dataList = $scope.dataList.sort(function(a, b) {
         if(a.date > b.date)
           return -1;

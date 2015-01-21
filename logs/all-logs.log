@@ -946,3 +946,78 @@
 2015-01-20T20:48:43.004Z - info: not logged in
 2015-01-20T20:48:43.006Z - info: did not hit youtube_cache
 2015-01-20T20:48:43.006Z - info: not logged in
+2015-01-21T03:01:46.010Z - info: start app
+2015-01-21T03:01:47.436Z - info: twitter user not logged in
+2015-01-21T03:01:47.445Z - info: instagram user not logged in
+2015-01-21T03:01:47.448Z - info: youtube user not logged in
+2015-01-21T03:01:47.451Z - info: did not hit 'twitter_cache' 
+2015-01-21T03:01:47.454Z - info: did not hit instagram_cache
+2015-01-21T03:01:47.454Z - info: not logged in
+2015-01-21T03:01:47.458Z - info: did not hit youtube_cache
+2015-01-21T03:01:47.458Z - info: not logged in
+2015-01-21T03:01:40.457Z - info: user logged into twitter, and data set
+2015-01-21T03:01:40.458Z - info: auth success, redirect back to main page
+2015-01-21T03:01:40.750Z - info: twitter user logged in
+2015-01-21T03:01:40.753Z - info: instagram user not logged in
+2015-01-21T03:01:40.757Z - info: youtube user not logged in
+2015-01-21T03:01:40.762Z - info: did not hit 'twitter_cache' 
+2015-01-21T03:01:40.768Z - info: did not hit instagram_cache
+2015-01-21T03:01:40.768Z - info: not logged in
+2015-01-21T03:01:40.770Z - info: did not hit youtube_cache
+2015-01-21T03:01:40.770Z - info: not logged in
+2015-01-21T03:01:51.973Z - info: twitter user logged in
+2015-01-21T03:01:51.974Z - info: instagram user not logged in
+2015-01-21T03:01:51.977Z - info: youtube user not logged in
+2015-01-21T03:01:51.982Z - info: did not hit instagram_cache
+2015-01-21T03:01:51.982Z - info: not logged in
+2015-01-21T03:01:51.983Z - info: did not hit youtube_cache
+2015-01-21T03:02:02.033Z - info: twitter user logged in
+2015-01-21T03:02:02.035Z - info: instagram user logged in
+2015-01-21T03:02:02.036Z - info: youtube user not logged in
+2015-01-21T03:02:02.043Z - info: did not hit instagram_cache
+2015-01-21T03:02:36.313Z - info: twitter user logged in
+2015-01-21T03:02:36.316Z - info: instagram user logged in
+2015-01-21T03:02:36.324Z - info: youtube user not logged in
+2015-01-21T03:03:49.507Z - info: start app
+2015-01-21T03:03:50.706Z - info: twitter user not logged in
+2015-01-21T03:03:50.714Z - info: instagram user not logged in
+2015-01-21T03:03:50.717Z - info: youtube user not logged in
+2015-01-21T03:03:50.720Z - info: did not hit 'twitter_cache' 
+2015-01-21T03:03:50.723Z - info: did not hit instagram_cache
+2015-01-21T03:03:50.723Z - info: not logged in
+2015-01-21T03:03:50.725Z - info: did not hit youtube_cache
+2015-01-21T03:03:50.726Z - info: not logged in
+2015-01-21T03:04:00.614Z - info: user logged into twitter, and data set
+2015-01-21T03:04:00.615Z - info: auth success, redirect back to main page
+2015-01-21T03:04:00.972Z - info: twitter user logged in
+2015-01-21T03:04:00.978Z - info: instagram user not logged in
+2015-01-21T03:04:00.982Z - info: youtube user not logged in
+2015-01-21T03:04:00.985Z - info: did not hit 'twitter_cache' 
+2015-01-21T03:04:00.992Z - info: did not hit instagram_cache
+2015-01-21T03:04:00.992Z - info: not logged in
+2015-01-21T03:04:00.994Z - info: did not hit youtube_cache
+2015-01-21T03:04:00.994Z - info: not logged in
+2015-01-21T03:04:04.117Z - info: twitter user logged in
+2015-01-21T03:04:04.119Z - info: instagram user logged in
+2015-01-21T03:04:04.124Z - info: youtube user not logged in
+2015-01-21T03:04:04.128Z - info: did not hit instagram_cache
+2015-01-21T03:04:04.131Z - info: did not hit youtube_cache
+2015-01-21T03:04:04.131Z - info: not logged in
+2015-01-21T03:04:46.204Z - info: twitter user logged in
+2015-01-21T03:04:46.209Z - info: instagram user logged in
+2015-01-21T03:04:46.210Z - info: youtube user not logged in
+2015-01-21T03:04:46.217Z - info: did not hit youtube_cache
+2015-01-21T03:04:46.217Z - info: not logged in
+2015-01-21T03:04:53.595Z - info: twitter user logged in
+2015-01-21T03:04:53.597Z - info: instagram user logged in
+2015-01-21T03:04:53.598Z - info: youtube user not logged in
+2015-01-21T03:04:53.607Z - info: did not hit youtube_cache
+2015-01-21T03:05:53.775Z - info: twitter user logged in
+2015-01-21T03:05:53.777Z - info: instagram user logged in
+2015-01-21T03:05:53.779Z - info: youtube user not logged in
+2015-01-21T03:06:49.592Z - info: twitter user logged in
+2015-01-21T03:06:49.594Z - info: instagram user logged in
+2015-01-21T03:06:49.595Z - info: youtube user not logged in
+2015-01-21T03:07:54.302Z - info: twitter user logged in
+2015-01-21T03:07:54.304Z - info: instagram user logged in
+2015-01-21T03:07:54.306Z - info: youtube user not logged in
