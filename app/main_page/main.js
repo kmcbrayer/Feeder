@@ -41,7 +41,6 @@ angular.module('feederApp')
         return 0
       });
     });
-    console.log($scope.user)
 
     //page locations and init
     $scope.pageSet = pageSet;

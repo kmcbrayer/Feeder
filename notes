@@ -103,6 +103,16 @@ deployment procedure
     remember sign in(cookies?)
         time since last used: if after certain time auto refresh
 
+
+E2E tests:
+in /Feeder, run:
+    webdriver-manager update
+    webdriver-manager start
+go to 'http://www.devsite.com:4444/wd/hub/static/resource/hub.html'
+thats it for now look into test/e2e/test-spec.js
+
+
+
 Postgres:
 db superusername - postgres, pw - km0***
 decent breakdown
@@ -115,18 +125,3 @@ settings gear:
 
 google developer console:
 https://console.developers.google.com/project
-
-
-log in flow:
-user clickes twitter button
-becomes logged in on the backend
-    saving userdata in localStore('twit_data')
-on page reload call all feed services
-if user logged in on backend feeds will populate on frontend
-
-
-flow I want:
-user clicks twitter button
-user data saved on backend
-redirect forces page reload
-update frontend user data

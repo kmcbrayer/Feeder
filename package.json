@@ -41,6 +41,7 @@
     "grunt-newer": "~0.5.4",
     "grunt-ngmin": "~0.0.2",
     "grunt-open": "~0.2.0",
+    "grunt-protractor-runner": "^1.2.1",
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
@@ -50,6 +51,7 @@
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "~0.2.0",
+    "protractor": "^1.6.1",
     "time-grunt": "~0.2.1"
   },
   "engines": {

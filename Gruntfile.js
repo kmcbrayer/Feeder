@@ -367,8 +367,18 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: false
       }
+    },
+
+    // e2e tests
+    protractor: {
+      options: {
+        keepAlive: true,
+        configFile: "protractor.conf.js"
+      },
+      run: {}
     }
   });
+  grunt.loadNpmTasks('grunt-protractor-runner');
   
   grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
     this.async();
@@ -400,7 +410,8 @@ module.exports = function (grunt) {
     'clean:server',
     'concurrent:test',
     'autoprefixer',
-    'karma'
+    'karma',
+    'protractor:run'
   ]);
 
   grunt.registerTask('build', [
