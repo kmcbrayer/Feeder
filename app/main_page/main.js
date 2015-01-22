@@ -2,12 +2,7 @@
 
 angular.module('feederApp')
   .controller('MainCtrl', function ($scope, $http, $q, pageSet, UserService) {
-    //update user service first thing:
-    UserService.updateTwitterInfo();
-    UserService.updateInstagramInfo();
-    UserService.updateYoutubeInfo();
     var twitterList, youtubeList, instagramList = [];
-    $scope.user = UserService;
     $scope.dataList = [];
     $q.all([
       $http.get('/api/twitter/statuses').success(function(data) {

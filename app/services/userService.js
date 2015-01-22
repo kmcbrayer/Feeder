@@ -19,7 +19,9 @@ angular.module('feederApp')
           displayName : user.displayName,
           photoUrl :    user.photos[0].value
         };
-        userData.twitData = twitData;//set if success
+        userData.twitData = twitData;
+        $rootScope.$broadcast('user-updated');
+        return userData.twitData;//set if success
       });
       return userData.twitData;//return {} if not success
     };
@@ -33,6 +35,7 @@ angular.module('feederApp')
           photoUrl : user._json.data.profile_picture
         };
         userData.igData = igData;
+        return userData.igData;
       });
       return userData.igData;
     };
@@ -46,6 +49,7 @@ angular.module('feederApp')
           photoUrl : user._json.picture
         };
         userData.ytData = ytData;
+        return userData.ytData;
       });
       return userData.ytData;
     };
