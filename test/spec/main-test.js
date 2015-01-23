@@ -13,46 +13,7 @@ describe('Controller: MainCtrl', function () {
                               twitterUser,twitterStatuses,instagramFeed,youtubeSubs,pageSet ) {
     $httpBackend = _$httpBackend_;
     scope = $rootScope.$new();
-    pSet = pageSet;
-
-    //do backend mocking
-    //mock user data
-    $httpBackend.when('GET', '/api/twitter/currentUser')
-      .respond(
-        {
-          _json: {
-            screen_name : 'Kmac'
-          },
-          displayName : 'Kevin McBrayer',
-          photos : [
-            {
-              value : 'http://URL.com'
-            }
-          ]
-        }
-      );
-      $httpBackend.when('GET', '/api/instagram/currentUser')
-      .respond(
-        {
-          username: 'Kmac',
-          displayName: 'Kevin McBrayer',
-          _json : {
-            data : {
-              profile_picture : 'http://URL.com'
-            }
-          }
-        }
-      );
-      $httpBackend.when('GET', '/api/youtube/currentUser')
-      .respond(
-        {
-          _json : {
-            screen_name : 'Kmac',
-            name : 'Kevin McBrayer',
-            picture : 'http://URL.com'
-          }
-        }
-      );
+    
     //mock feed data
     $httpBackend.when('GET', '/api/twitter/statuses')
       .respond(

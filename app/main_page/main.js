@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('feederApp')
-  .controller('MainCtrl', function ($scope, $http, $q, pageSet, UserService) {
+  .controller('MainCtrl', function ($scope, $http, $q, pageSet) {
+    $scope.pageSet = pageSet;
     var twitterList, youtubeList, instagramList = [];
     $scope.dataList = [];
     $q.all([
@@ -36,8 +37,4 @@ angular.module('feederApp')
         return 0
       });
     });
-
-    //page locations and init
-    $scope.pageSet = pageSet;
-    $scope.active=0;
   });

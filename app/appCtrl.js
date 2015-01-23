@@ -2,9 +2,10 @@
 
 angular.module('feederApp')
   .controller('AppCtrl', function ($scope, $http, UserService) {
-    $scope.user = UserService;
-    $scope.clear = function() {
-      UserService.clear();
-    }
-    $scope.testMode = false;
+    //user updates on pageload. 
+    //should store to prevent less calls
+    $scope.user = UserService.userData;
+    UserService.updateTwitterInfo();
+    UserService.updateInstagramInfo();
+    UserService.updateYoutubeInfo();
   });

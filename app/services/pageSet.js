@@ -5,22 +5,26 @@ angular.module('feederApp')
       {
         name: "Main",
         isActive: true,
-        position: "first"
+        position: "first",
+        href: "#"
       },
       {
         name: "Twitter",
         isActive: false,
-        position: "second"
+        position: "second",
+        href: "/authin/twitter"
       },
       {
         name: "Youtube",
         isActive: false,
-        position: "third"
+        position: "third",
+        href: "/authin/youtube"
       },
       {
         name: "Instagram",
         isActive: false,
-        position: "fourth"
+        position: "fourth",
+        href: "/authin/instagram"
       }
     ]
   );

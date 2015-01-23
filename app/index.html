@@ -32,13 +32,9 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-controller="AppCtrl">
-        <div ng-if="testMode" class="userModel" style"position: absolute;top: 0px;left:0px;">
-            <div ng-click="clear()">Clear User</div>
-            <div onclick="window.localStorage.clear();" style="fontweight:bold;">Clear store</div>
-            {{user}}
-        </div>
         <!-- this is where the header will go -->
-        <!--<div ng-include="'navbar/navbar.html'"></div>-->
+        <div ng-include="'navbar/navbar.html'"></div>
+        <!-- content -->
         <div class="ngViewWrapper" ng-view=""></div>
     </div>
 
@@ -67,6 +63,7 @@
     <script src="routes.js"></script>
     <script src="appCtrl.js"></script>
     <script src="main_page/main.js"></script>
+    <script src="navbar/navbar.js"></script>
     <script src="twitter/twitter.js"></script>
     <script src="youtube/youtube.js"></script>
     <script src="instagram/instagram.js"></script>

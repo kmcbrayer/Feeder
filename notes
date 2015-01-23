@@ -41,8 +41,9 @@ c-:hotfix - cache api calls for testing(need time stamp for refreshes)
 c-6 make clear/logout button
 c-7 concat angular with grunt
 -TODO: better css for navbar
--8 if logged in buttons set active and positions(act like links)?
--9 seperate the navbar and page content?
+c-8 if logged in buttons set active and positions(act like links)?
+-TODO: write new tests for main and navbar 
+c-9 seperate the navbar and page content?
 -10 if no youtube links return popular links
     -let user know with bar at the top of the page with X button
 -11 Write E2E tests
