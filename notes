@@ -114,13 +114,15 @@ in /Feeder, run:
 go to 'http://www.devsite.com:4444/wd/hub/static/resource/hub.html'
 thats it for now look into test/e2e/test-spec.js
 
-
-
 Postgres:
 db superusername - postgres, pw - km0***
 decent breakdown
 https://gigadom.wordpress.com/2014/07/20/working-with-node-js-and-postgresql/
 
+Forever:
+in /home/Feeder 
+    stop: forever stopall
+    start: forever start server.js
 
 images:
 settings gear:
@@ -128,3 +130,6 @@ settings gear:
 
 google developer console:
 https://console.developers.google.com/project
+
+
+
