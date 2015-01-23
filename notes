@@ -43,6 +43,7 @@ c-7 concat angular with grunt
 -TODO: better css for navbar
 c-8 if logged in buttons set active and positions(act like links)?
 -TODO: write new tests for main and navbar 
+-TODO: remove target="-self" from link if logged in??
 c-9 seperate the navbar and page content?
 -10 if no youtube links return popular links
     -let user know with bar at the top of the page with X button
