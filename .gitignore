@@ -2,4 +2,5 @@ node_modules
 .tmp
 .sass-cache
 bower/bower_components
+lib/config/config.js
 logs
