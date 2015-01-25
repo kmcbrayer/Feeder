@@ -1,110 +1,35 @@
-c-1. setup app
-    c-make sure express is working correctly
-    c-edit index.html
-    c-remove fullstack bloat
-    c-later-add main file html/css
-        *bootstrapped it :(
-
-c-2. set up sign ins
-    c-twitter
-        C-get user timelines from twitter api(look into twit module)
-        C-in /twitter do an "if (!user) show login"
-    c-facebook sign in
-*        -get user timelines -- can't pull feeds w/o facebook approval
-c-hotfix: set up userdata in local storeage
-c-hotfix: seperate out login stratagies
-    c-youtube sign in
-        c-get subscription feed
-    C-instagram login
-        c-feed
-
-c-3 need persistant data for users(feature: single sign on?)not needed-may need database?
-    c-localStoreage used
-
-c-4 feature: chronological home screen:
-c-:hotfix - dynamic passport redirects
-    c-get all avalable feeds
-    c-merge them based on time
-        c-need to convert times first
-        c-back or front end? backend time conversions, front end sorting
-        c-check out moment js
-        c-sort
-c-:hotfix - cache api calls for testing(need time stamp for refreshes)
-    c-display correct data per article
-    
--5 feature: mobile touch controls
-    c-better header
-    c-swipeing controls:
-        c-asyn load "pages" 
-        need swipe instructions
-
-c-6 make clear/logout button
-c-7 concat angular with grunt
--TODO: better css for navbar
-c-8 if logged in buttons set active and positions(act like links)?
--TODO: write new tests for main and navbar 
--TODO: remove target="-self" from link if logged in??
-c-9 seperate the navbar and page content?
--10 if no youtube links return popular links
-    -let user know with bar at the top of the page with X button
--11 Write E2E tests
+- feature: mobile touch controls
+    - left and right swiping:
+        
+- better css for navbar
+- write new tests for main and navbar 
+- remove target="-self" from link if logged in??
+- Write E2E tests
     clear and logged in stuff:
         see states_tests.txt
-
-todos:
-    c-get youtube link
-    c-get twitter user profile pic
-    c-twitter links and stuff filterr
-    c-make directives for styling different articles
-    C-twitter handle link
-    c-remove localstorage
-    c-youtube description filter
-    c-fix youtube date filter issue
-    c-add Sass
-    c-style templates
-        c-need mobile home page
-        c-twitter
-        c-youtube
-        c-instagram
-            c-need like icon
-        c-main tabs iphone4 fuck up
-    c-set up dev env, use express settigns
-    c-.gitignore secrets
-    -better css for navbar on shitty iphone
-    -better sort algorythm for mainpage
-    -research refresh tokens
-
-    -pull to refresh feature
-        -timestamp api calls from backend
-        -if inside 5 min hit cache
-        -if force param is used dont hit cache
-            || req.param('force') == true
-        -scope.pullToRefresh = function() {
-            $http({
-                url : 'api/blah/blah',
-                method : "GET",
-                params : {force : true}
-            ).success(function(data) {
-                dataList = data;
-            });
-        }
-    -checkboxes for adding and removing feeds
-    -better sort alorithm for chrono page
+- better sort algorythm for mainpage
+- research refresh tokens
+- feature: pull to refresh
+    -timestamp api calls from backend
+    -if inside 5 min hit cache
+    -if force param is used dont hit cache
+        || req.param('force') == true
+    -scope.pullToRefresh = function() {
+        $http({
+            url : 'api/blah/blah',
+            method : "GET",
+            params : {force : true}
+        ).success(function(data) {
+            dataList = data;
+        });
+    }
+- checkboxes for adding and removing feeds
 
 deployment procedure
     -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py
 
     -set node like " SET NODE_ENV production"
     -figure out a way to do a deployment. heroku?
-
-
-**other goals
-    mobile friendly(media-queries)
-    pages for each sign in 
-    asyncronous loading of initial pages
-    pull to refresh
-    remember sign in(cookies?)
-        time since last used: if after certain time auto refresh
 
 
 E2E tests:
