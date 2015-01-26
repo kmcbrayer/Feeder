@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Feeder_bower_libs" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/bower/bower_components" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bower/bower_components" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feederApp')
-  .directive('touchSlideController', ['$swipe',function($swipe) {
+  .directive('touchSlideController', ['$swipe',function($swipe, pageSet) {
     return {
       restrict: 'A',
       link: function(scope,ele,attrs,ctrl) {

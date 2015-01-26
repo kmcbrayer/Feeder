@@ -1,9 +1,8 @@
 - feature: mobile touch controls
     - left and right swiping:
-        
+
 - better css for navbar
-- write new tests for main and navbar 
-- remove target="-self" from link if logged in??
+- write new tests for main and navbar
 - Write E2E tests
     clear and logged in stuff:
         see states_tests.txt
@@ -45,7 +44,7 @@ decent breakdown
 https://gigadom.wordpress.com/2014/07/20/working-with-node-js-and-postgresql/
 
 Forever:
-in /home/Feeder 
+in /home/Feeder
     stop: forever stopall
     start: forever start server.js
 

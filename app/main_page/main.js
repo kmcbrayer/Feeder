@@ -2,7 +2,9 @@
 
 angular.module('feederApp')
   .controller('MainCtrl', function ($scope, $http, $q, pageSet) {
-    $scope.pageSet = pageSet;
+    //set the pages
+    $scope.pageSet = pageSet.list;
+    //get the page data
     var twitterList, youtubeList, instagramList = [];
     $scope.dataList = [];
     $q.all([
