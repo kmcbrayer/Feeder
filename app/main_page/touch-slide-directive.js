@@ -6,24 +6,25 @@ angular.module('feederApp')
       restrict: 'A',
       link: function(scope,ele,attrs,ctrl) {
         var startx, delta;
+        var enabled = true;
         $swipe.bind(ele, {
           'start': function(coords) {
+            enabled = true;
             startx = coords.x;
           },
           'move': function(coords) {
             delta = coords.x - startx;
-            ele.css('left',delta);
-            if (delta < -100) {
-              scope.$parent.$parent.pageTurnRight();
+            if (enabled) {
+              ele.css('left',delta);
+              if (delta < -100) {
+                enabled = false;
+                scope.pageTurnRight();
+              }
+              if (delta > 100) {
+                enabled = false;
+                scope.pageTurnLeft();
+              }
             }
-            //start timer
-            //slow move: activate pageTurn when position is x = 100?px from edge
-              //if left edge pageTurnRight:
-              //if right edge pageTurnLeft:
-            //fast move: activate pageTurn when delta/t > x = find natural acceleration
-              //if delta>0: pageTurnRight
-              //if delta<0: pageTurnLeft
-            //delete timer
           },
           'end': function(coords) {
             ele.animate({left: 0},400,'swing');

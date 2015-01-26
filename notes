@@ -1,7 +1,4 @@
-- feature: mobile touch controls
-    - left and right swiping:
-- make navbar links just change position of pages and not link to new url
-- better css for navbar
+- make navbar links just change position of pages and not link to new url, set active...
 - write new tests for main and navbar
 - Write E2E tests
     clear and logged in stuff:
@@ -22,7 +19,8 @@
             dataList = data;
         });
     }
-- checkboxes for adding and removing feeds
+- checkboxes for adding and removing feeds:
+  pillbox - pull right, pageSet.list use active maybe?
 
 deployment procedure
     -main site (from kmcbrayer_com dir): uwsgi --socket :8001 --wsgi-file com/wsgi.py

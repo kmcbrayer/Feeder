@@ -31,7 +31,6 @@ angular.module('feederApp')
         $scope.dataList = $scope.dataList.concat($scope.youtubeList);
       }
       $scope.pageTurnRight = function() {
-        console.log('called');
         for (var i in $scope.pageSet) {
           if ($scope.pageSet[i].position === 'first') {
             $scope.pageSet[i].position = 'fourth';
@@ -43,6 +42,21 @@ angular.module('feederApp')
             $scope.pageSet[i].position = 'third';
           }
         }
+        $scope.$digest();
+      }
+      $scope.pageTurnLeft = function() {
+        for (var i in $scope.pageSet) {
+          if ($scope.pageSet[i].position === 'first') {
+            $scope.pageSet[i].position = 'second';
+          } else if ($scope.pageSet[i].position === 'second') {
+            $scope.pageSet[i].position = 'third';
+          } else if ($scope.pageSet[i].position === 'third') {
+            $scope.pageSet[i].position = 'fourth';
+          } else {
+            $scope.pageSet[i].position = 'first';
+          }
+        }
+        $scope.$digest();
       }
       //TODO: better sorting algorythm
       $scope.dataList = $scope.dataList.sort(function(a, b) {

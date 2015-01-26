@@ -1,9 +1,9 @@
 <div id="content" class="clear">
-  <div class="test_content" ng-if="dataList[0]">
+  <div ng-if="dataList[0]">
     <h3>Click the links above to log in and view the latest tweets, instagrams, and youtube uploads you follow.</h3>
   </div>
   <div>
-    <div class="page" ng-repeat="page in pageSet">
+    <div class="page" ng-repeat="page in pageSet" touch-slide-controller>
 
       <div ng-if="page.name == 'Instagram'">
         <div ng-class="page.position" >
@@ -30,7 +30,7 @@
       </div>
 
       <div ng-if="page.name == 'Main'">
-        <div touch-slide-controller ng-class="page.position" >
+        <div ng-class="page.position" >
           <div ng-repeat="article in dataList" class="dataContainer">
             <tweet ng-if="article.type=='twitter'" tweet="article"></tweet>
             <igram ng-if="article.type=='instagram'" igram="article"></igram>
