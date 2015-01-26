@@ -12,7 +12,7 @@ angular.module('feederApp')
           },
           'move': function(coords) {
             delta = coords.x - startx;
-            console.log(ele);
+            console.log(delta);
             //start timer
             //slow move: activate pageTurn when position is x = 100?px from edge
               //if left edge pageTurnLeft:

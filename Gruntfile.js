@@ -78,7 +78,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/{,*//*}*.{html,jade,css,js,scss}',
           '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
         ],
-      
+
         options: {
           livereload: true
         }
@@ -161,8 +161,8 @@ module.exports = function (grunt) {
         ignorePath: '<%= yeoman.app %>/'
       }
     },
-    
-    
+
+
 
     // Renames files for browser caching purposes
     rev: {
@@ -264,7 +264,7 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '<%= yeoman.app %>/<%= yeoman.views %>',
           dest: '<%= yeoman.views %>',
-          src: '**/*.jade',
+          src: '**/*.jade'
         }, {
           expand: true,
           cwd: '.tmp/images',
@@ -301,10 +301,10 @@ module.exports = function (grunt) {
     //concat all the js
     concat: {
       options: {
-        seperator: ';',
+        seperator: ';'
       },
       dist: {
-        src: ['app/routes_settings/*.js', 'app/filters/*.js', 'app/instagram/*.js', 'app/main_page/*.js', 
+        src: ['app/routes_settings/*.js', 'app/filters/*.js', 'app/instagram/*.js', 'app/main_page/*.js',
               'app/navbar/*.js', 'app/settings/*.js', 'app/twitter/*.js', 'app/youtube/*.js'],//must load routes_settings first
         dest: '<%= yeoman.app %>/bundle.js'
       }
@@ -379,12 +379,12 @@ module.exports = function (grunt) {
     }
   });
   grunt.loadNpmTasks('grunt-protractor-runner');
-  
+
   grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
     this.async();
   });
 
-  grunt.registerTask('serve', function (target) {
+  grunt.registerTask('serveish', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
     }
@@ -440,5 +440,9 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('serve', [
+    'serveish'
   ]);
 };
