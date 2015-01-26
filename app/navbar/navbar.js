@@ -7,7 +7,6 @@ angular.module('feederApp')
 
     //set the page links if logged in
     //twitter
-     console.log($scope.user);
     if($scope.user.twitData.isLoggedIn) {
       //angular ng-repeat auto sorts so I have to use an array
       for (var i in $scope.pageSet) {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('feederApp')
-  .directive('touchSlideController', ['$swipe',function($swipe, pageSet) {
+  .directive('touchSlideController', ['$swipe', 'pageSet', function($swipe, pageSet) {
     return {
       restrict: 'A',
       link: function(scope,ele,attrs,ctrl) {
@@ -12,21 +12,21 @@ angular.module('feederApp')
           },
           'move': function(coords) {
             delta = coords.x - startx;
-            console.log(delta);
+            ele.css('left',delta);
+            if (delta < -100) {
+              scope.$parent.$parent.pageTurnRight();
+            }
             //start timer
             //slow move: activate pageTurn when position is x = 100?px from edge
-              //if left edge pageTurnLeft:
-              //if right edge pageTurnRight:
+              //if left edge pageTurnRight:
+              //if right edge pageTurnLeft:
             //fast move: activate pageTurn when delta/t > x = find natural acceleration
               //if delta>0: pageTurnRight
               //if delta<0: pageTurnLeft
             //delete timer
           },
           'end': function(coords) {
-            // "bounce back" to startx
-              //set timer ==.5 seconds
-              //move frame like 30-50px per timer tick
-              //delete timer
+            ele.animate({left: 0},400,'swing');
           },
           'cancel': function(coords) {
             // same as 'end'

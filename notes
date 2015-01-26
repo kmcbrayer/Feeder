@@ -1,6 +1,6 @@
 - feature: mobile touch controls
     - left and right swiping:
-
+- make navbar links just change position of pages and not link to new url
 - better css for navbar
 - write new tests for main and navbar
 - Write E2E tests

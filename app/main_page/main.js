@@ -30,6 +30,20 @@ angular.module('feederApp')
       if (youtubeList !== []) {
         $scope.dataList = $scope.dataList.concat($scope.youtubeList);
       }
+      $scope.pageTurnRight = function() {
+        console.log('called');
+        for (var i in $scope.pageSet) {
+          if ($scope.pageSet[i].position === 'first') {
+            $scope.pageSet[i].position = 'fourth';
+          } else if ($scope.pageSet[i].position === 'second') {
+            $scope.pageSet[i].position = 'first';
+          } else if ($scope.pageSet[i].position === 'third') {
+            $scope.pageSet[i].position = 'second';
+          } else {
+            $scope.pageSet[i].position = 'third';
+          }
+        }
+      }
       //TODO: better sorting algorythm
       $scope.dataList = $scope.dataList.sort(function(a, b) {
         if(a.date > b.date)

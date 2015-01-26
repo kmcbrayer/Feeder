@@ -32,7 +32,4 @@ angular.module('feederApp')
         pageTarget : '_self'
       }
     ];
-    this.pageTurnRight = function() {
-
-    }
   });
