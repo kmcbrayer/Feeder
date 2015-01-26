@@ -6,11 +6,10 @@ var passport = require('passport');
 var Storage = require('dom-storage');
 var log = require('./lib/config/winston');
 var twitAPI = require('./lib/controllers/twitterApi');
-var fbAPI = require('./lib/controllers/facebookApi');
 var ytAPI = require('./lib/controllers/youtubeApi');
 var igAPI = require('./lib/controllers/instagramApi');
 
-log.info("start app")
+log.info("start app");
 // Setup session storage
 var store = new Storage(null, {strict:true});
 
@@ -19,8 +18,6 @@ var app = express();
 
 // Express Configuration
 require('./lib/config/express')(app);
-//Facebook auth config
-require('./lib/config/fb_login')(app,passport,store);
 // Twitter Auth Config
 require('./lib/config/twit_login')(app,passport,store);
 // Youtube Auth Config
@@ -39,12 +36,9 @@ var api = require('./lib/controllers/api'),
 app.get('/api/clear', api.clear(store));
 //reddit
 app.get('/api/redditAww', api.redditAww);
-//facebook
-app.get('/api/facebook/currentUser', api.fbUser(store));
-app.get('/api/facebook/feed', fbAPI.feed)
 //twitter
 app.get('/api/twitter/currentUser', api.twitUser(store));
-app.get('/api/twitter/statuses', twitAPI.statuses(store))
+app.get('/api/twitter/statuses', twitAPI.statuses(store));
 //youtube
 app.get('/api/youtube/currentUser', api.ytUser(store));
 app.get('/api/youtube/subscriptions', ytAPI.subscriptions(store));
@@ -66,4 +60,4 @@ app.listen(port, function () {
 });
 
 // Expose app
-exports = module.exports = app;
+module.exports = app;
