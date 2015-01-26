@@ -1,3 +1,4 @@
+turn off stupid touch controls for desktop
 - make navbar links just change position of pages and not link to new url, set active...
 - write new tests for main and navbar
 - Write E2E tests
