@@ -4,3 +4,4 @@ node_modules
 bower/bower_components
 lib/config/config.js
 logs/*.log
+.idea
